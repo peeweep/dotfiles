@@ -1,0 +1,61 @@
+# Theme
+source ~/.mutt/dracula.muttrc
+# source ~/.mutt/colors-gruvbox-shuber.muttrc
+set editor = nvim
+set mbox_type = Maildir
+set folder = ~/mail
+set header_cache = ~/.mutt/cache/headers
+set message_cachedir = ~/.mutt/cache/bodies
+set certificate_file = ~/.mutt/certificates
+set tmpdir = "/var/tmp"
+
+# Encrypted Mutt IMAP/SMTP Passwords
+# edit ~/.mutt/mutt_pass
+#  set my_pass = "your_password"
+#  set my_user = username
+#  set my_addr = username@example.com
+#  set hostname = mail.example.com
+# gpg -r your_fpri -e ~/.mutt/mutt_pass
+# rm ~/.mutt/mutt_pass
+
+source "gpg -dq ~/.mutt/mutt_pass.gpg |"
+
+# IMAP
+set folder = imaps://$hostname/
+set imap_user = $my_addr
+set imap_pass = $my_pass
+set spoolfile = +Inbox
+set record = +Sent
+set postponed = +Drafts
+set trash = +Trash
+mailboxes +Archives +Drafts +Inbox +Sent +Trash
+
+set sidebar_visible = yes
+set sidebar_width = 20
+set pager_index_lines = 10
+unset imap_passive
+# set imap_check_subscribed
+set imap_keepalive = 300
+set mail_check = 60
+set sort = threads
+set sort_aux = last-date-received
+
+# SMTP
+set sendmail ="/usr/bin/msmtp"
+set realname = $my_user
+set from = $my_addr
+set use_from = yes
+set smtp_url = smtps://$imap_user:$imap_pass@$hostname
+set ssl_force_tls = yes
+#set edit_headers = yes
+unset ssl_starttls
+# set smtp_authenticators = "login"
+
+# BIND
+# Move the highlight to the previous mailbox
+bind index,pager \Cp sidebar-prev
+# Move the highlight to the next mailbox
+bind index,pager \Cn sidebar-next
+# Open the highlighted mailbox
+bind index,pager \Co sidebar-open
+bind index,pager \Cf imap-fetch-mail
