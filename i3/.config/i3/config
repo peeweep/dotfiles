@@ -193,7 +193,7 @@ gaps outer 5
 # exec applications
 bindsym $mod+Return exec xfce4-terminal 
 bindsym $mod+Shift+f exec rofi -show run
-bindsym $mod+Shift+z exec scrot -d 2 -e 'mv $f ~/Pictures/Screenshot' 
+bindsym $mod+Shift+z exec flameshot gui
 # reszie window
 bindsym $mod+Ctrl+Right resize shrink width 1 px or 1 ppt
 bindsym $mod+Ctrl+Up resize grow height 1 px or 1 ppt
