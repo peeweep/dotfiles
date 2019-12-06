@@ -203,3 +203,4 @@ bindsym $mod+Ctrl+Left resize grow width 1 px or 1 ppt
 exec_always --no-startup-id "compton -b"
 #exec_always "xrandr --dpi 220"
 exec_always --no-startup-id feh --bg-scale ~/Pictures/bg.jpg
+exec_always --no-startup-id numlockx on
