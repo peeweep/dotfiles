@@ -8,6 +8,9 @@ set header_cache = ~/.mutt/cache/headers
 set message_cachedir = ~/.mutt/cache/bodies
 set certificate_file = ~/.mutt/certificates
 set tmpdir = "/var/tmp"
+set sidebar_sort_method = 'alpha'
+set sort = threads
+set sort_aux = last-date-received
 
 # Encrypted Mutt IMAP/SMTP Passwords
 # edit ~/.mutt/mutt_pass
@@ -24,21 +27,19 @@ source "gpg -dq ~/.mutt/mutt_pass.gpg |"
 set folder = imaps://$hostname/
 set imap_user = $my_addr
 set imap_pass = $my_pass
-set spoolfile = +Inbox
+set spoolfile = +INBOX
 set record = +Sent
 set postponed = +Drafts
 set trash = +Trash
-mailboxes +Archives +Drafts +Inbox +Sent +Trash
+mailboxes +Archives +Drafts +INBOX +Sent +Trash
 
 set sidebar_visible = yes
 set sidebar_width = 20
 set pager_index_lines = 10
 unset imap_passive
-# set imap_check_subscribed
+set imap_check_subscribed
 set imap_keepalive = 300
 set mail_check = 60
-set sort = threads
-set sort_aux = last-date-received
 
 # SMTP
 set sendmail ="/usr/bin/msmtp"
@@ -47,9 +48,7 @@ set from = $my_addr
 set use_from = yes
 set smtp_url = smtps://$imap_user:$imap_pass@$hostname
 set ssl_force_tls = yes
-#set edit_headers = yes
-unset ssl_starttls
-# set smtp_authenticators = "login"
+set ssl_starttls = no
 
 # BIND
 # Move the highlight to the previous mailbox
