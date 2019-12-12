@@ -5,6 +5,7 @@
 export ZSH=/usr/share/oh-my-zsh
 
 alias vim=nvim
+alias mutt=neomutt
 alias farsee="curl -F \"c=@-\" \"https://fars.ee/\""
 source /usr/share/doc/pkgfile/command-not-found.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
