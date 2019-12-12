@@ -11,6 +11,10 @@ set tmpdir = "/var/tmp"
 set sidebar_sort_method = 'alpha'
 set sort = threads
 set sort_aux = last-date-received
+set sidebar_format = '%B%?F? [%F]?%* %?N?%N/?%S'
+set sidebar_visible = yes
+set sidebar_width = 20
+set pager_index_lines = 10
 
 # Encrypted Mutt IMAP/SMTP Passwords
 # edit ~/.mutt/mutt_pass
@@ -31,11 +35,8 @@ set spoolfile = +INBOX
 set record = +Sent
 set postponed = +Drafts
 set trash = +Trash
-mailboxes +Archives +Drafts +INBOX +Sent +Trash
+# mailboxes +Archives +Drafts +INBOX +Sent +Trash
 
-set sidebar_visible = yes
-set sidebar_width = 20
-set pager_index_lines = 10
 unset imap_passive
 set imap_check_subscribed
 set imap_keepalive = 300
