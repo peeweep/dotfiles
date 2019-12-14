@@ -5,3 +5,4 @@
 	helper = store
 [core]
 	editor = nvim
+	excludesfile = ~/.gitignore
