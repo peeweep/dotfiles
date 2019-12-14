@@ -15,6 +15,12 @@ hide_missing = true
 hide_inactive = true
 
 [[block]]
+block = "weather"
+format = "{weather} ({location}) {temp}°"
+service = { name = "openweathermap", api_key = "42a1771a0b787bf12e734ada0cfc80cb", city_id = "1805753", units = "metric" }
+interval = 1
+
+[[block]]
 block = "memory"
 format_mem = "{Mum}MB/{MTm}MB({Mup}%)"
 icons = true
