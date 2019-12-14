@@ -4,10 +4,23 @@ theme = "slick"
 name = "awesome"
 
 [icons.overrides]
-net_up    = "  "
-net_down  = "  "
-net_wired = "  "
 
+# Battery
+bat                = "  "
+bat_full           = "  "
+bat_charging       = "  "
+bat_discharging    = "  "
+bat_half           = "  "
+bat_quarter        = "  "
+bat_three_quarters = "  "
+
+# Network
+net_up       = "  "
+net_down     = "  "
+net_wired    = "  "
+net_wireless = " 泌 "
+
+# Weather
 weather_sun     = " 滛 "
 weather_snow    = " 流 "
 weather_thunder = " 朗 "
@@ -15,10 +28,12 @@ weather_clouds  = " 摒 "
 weather_rain    = " 殺 "
 weather_default = " 摒 "
 
+# Memory
 memory_mem  = " 勒 "
 memory_swap = " 易 "
 
 xrandr = "  "
+
 time = "  "
 
 [[block]]
@@ -29,7 +44,7 @@ format = "{percentage}% {time} {power}"
 block = "net"
 device = "wlp3s0"
 ssid = true
-speed_up = true
+speed_up = false
 speed_down = true
 hide_missing = true
 hide_inactive = true
@@ -38,7 +53,7 @@ hide_inactive = true
 block = "weather"
 format = "{weather} ({location}) {temp}°"
 service = { name = "openweathermap", api_key = "42a1771a0b787bf12e734ada0cfc80cb", city_id = "1805753", units = "metric" }
-interval = 600 
+interval = 600
 
 [[block]]
 block = "memory"
