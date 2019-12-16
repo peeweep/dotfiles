@@ -38,6 +38,7 @@ time = "  "
 
 [[block]]
 block = "battery"
+driver = "upower"
 format = "{percentage}% {time} {power}"
 
 [[block]]
