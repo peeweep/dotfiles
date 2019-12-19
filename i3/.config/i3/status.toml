@@ -72,4 +72,4 @@ driver = "auto"
 [[block]]
 block = "time"
 interval = 1 
-format = "%Y-%m-%d %R %A"
+format = "%Y-%m-%d %R"
