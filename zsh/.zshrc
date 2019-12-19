@@ -5,7 +5,7 @@
 export ZSH=/usr/share/oh-my-zsh
 
 alias vim=nvim
-alias mutt=neomutt
+alias mutt="LANGUAGE=ru_RU.UTF-8 neomutt"
 alias farsee="curl -F \"c=@-\" \"https://fars.ee/\""
 source /usr/share/doc/pkgfile/command-not-found.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -84,7 +84,6 @@ DISABLE_AUTO_UPDATE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
-
 
 # User configuration
 
