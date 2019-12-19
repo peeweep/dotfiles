@@ -180,13 +180,7 @@ bar {
         status_command i3status-rs ~/.config/i3/status.toml
         tray_output none
         colors {
-                separator #666666
-                background #222222
-                statusline #dddddd
-                focused_workspace #0088CC #0088CC #ffffff
-                active_workspace #333333 #333333 #ffffff
-                inactive_workspace #333333 #333333 #888888
-                urgent_workspace #2f343a #900000 #ffffff
+                background #424242
         }
 }
 
@@ -201,7 +195,7 @@ gaps outer 5
 
 # bindsym
 # exec applications
-bindsym $mod+Return exec konsole
+bindsym $mod+Return exec xfce4-terminal
 bindsym $mod+Shift+f exec rofi -show run
 bindsym $mod+Shift+z exec flameshot gui
 # reszie window
