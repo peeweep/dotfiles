@@ -3,7 +3,6 @@ source ~/.mutt/dracula.muttrc
 # source ~/.mutt/colors-gruvbox-shuber.muttrc
 set editor = nvim
 set mbox_type = Maildir
-set folder = ~/mail
 set header_cache = ~/.mutt/cache/headers
 set message_cachedir = ~/.mutt/cache/bodies
 set certificate_file = ~/.mutt/certificates
