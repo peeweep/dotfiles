@@ -150,12 +150,11 @@ pacman_official_packages() {
     neofetch neovim net-tools noto-fonts-cjk noto-fonts-emoji noto-fonts-extra numlockx \
     p7zip pacman-contrib pavucontrol pkgfile pkgstats pulseaudio python-pylint screen \
     screenfetch shellcheck shfmt telegram-desktop tldr tmux tree ttf-opensans unrar \
-    uptimed wget whois youtube-dl zstd
+    uptimed wget whois youtube-dl zstd networkmanager
 
-  # pkgfile
+  # systemd
   sudo systemctl enable pkgfile-update.timer
-  sudo systemctl start pkgfile-update.timer
-  sudo pkgfile --update
+  sudo systemctl enable NetworkManager
 }
 
 pacman_haveged() {
