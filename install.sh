@@ -201,10 +201,12 @@ sound_panel() {
 }
 
 xfceterminal_scheme() {
+  sudo pacman -S xfce4-terminal
   supersm xfce4-terminal
 }
 
 add_konsole_scheme() {
+  sudo pacman -S konsole
   sudo supersm konsole --target /
 }
 
@@ -223,7 +225,7 @@ desktop_session() {
 }
 
 i3gaps() {
-  sudo pacman -S i3-gaps i3status-rust-git xorg-xrdb
+  sudo pacman -S i3-gaps i3status-rust-git compton feh numlockx rofi flameshot xorg-xrdb
   supersm i3
   xfceterminal_scheme
 }
