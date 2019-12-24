@@ -139,15 +139,15 @@ pacman_unofficial_packages() {
   sudo pacman -Rs linux-lts-headers
 
   # rebuild grub
-  sudo pacman -Syu grub efibootmgr
+  sudo pacman -Syu grub efibootmgr os-prober ntfs-3g
   sudo grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=grub
   sudo grub-mkconfig -o /boot/grub/grub.cfg
 }
 
 pacman_official_packages() {
   sudo pacman -Syu alsa-utils autopep8 axel bind-tools chromium cloc cmake dmidecode \
-    exfat-utils feh flameshot gdb htop jdk-openjdk jq jre-openjdk lldb man mpv ncdu \
-    neofetch neovim net-tools noto-fonts-cjk noto-fonts-emoji noto-fonts-extra numlockx \
+    exfat-utils flameshot gdb htop jdk-openjdk jq jre-openjdk lldb man mpv ncdu \
+    neofetch neovim net-tools noto-fonts-cjk noto-fonts-emoji noto-fonts-extra \
     p7zip pacman-contrib pavucontrol pkgfile pkgstats pulseaudio python-pylint screen \
     screenfetch shellcheck shfmt telegram-desktop tldr tmux tree ttf-opensans unrar \
     uptimed wget whois youtube-dl zstd networkmanager
@@ -225,7 +225,8 @@ desktop_session() {
 }
 
 i3gaps() {
-  sudo pacman -S i3-gaps i3status-rust-git compton feh numlockx rofi flameshot xorg-xrdb
+  sudo pacman -S i3-gaps i3status-rust-git picom numlockx feh rofi xorg-xrdb sddm
+  sudo systemctl enable sddm
   supersm i3
   xfceterminal_scheme
 }
@@ -236,7 +237,16 @@ cd "${dotfiles}" || exit
 pacman_init
 fcitx5_init
 desktop_session
-i3gaps
+
+case $1 in
+i3)
+  i3gaps
+  ;;
+gnome)
+  sudo pacman -S gnome evolution gnome-tweaks sddm
+  sudo systemctl enable sddm
+  ;;
+esac
 
 #### begin symlink update
 # clang
