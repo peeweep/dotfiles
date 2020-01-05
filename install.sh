@@ -253,10 +253,8 @@ esac
 supersm clang
 # git
 supersm git
-# makepkg
-sudo supersm makepkg --target /
+# makepkg and pacman
+sudo supersm devtools --target /
 # mutt
 sudo pacman -S neomutt msmtp
 supersm mutt
-# pacman
-sudo supersm pacman --target /
