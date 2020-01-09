@@ -12,7 +12,7 @@ set sort = threads
 set sort_aux = last-date-received
 set sidebar_format = '%B%?F? [%F]?%* %?N?%N/?%S'
 set sidebar_visible = yes
-set sidebar_width = 20
+set sidebar_width = 40
 set pager_index_lines = 10
 
 # Encrypted Mutt IMAP/SMTP Passwords
