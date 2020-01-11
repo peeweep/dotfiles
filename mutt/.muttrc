@@ -15,40 +15,17 @@ set sidebar_visible = yes
 set sidebar_width = 40
 set pager_index_lines = 10
 
-# Encrypted Mutt IMAP/SMTP Passwords
-# edit ~/.mutt/mutt_pass
-#  set my_pass = "your_password"
-#  set my_user = username
-#  set my_addr = username@example.com
-#  set hostname = mail.example.com
-# gpg -r your_fpri -e ~/.mutt/mutt_pass
-# rm ~/.mutt/mutt_pass
-
-source "gpg -dq ~/.mutt/mutt_pass.gpg |"
-
 # IMAP
-set folder = imaps://$hostname/
-set imap_user = $my_addr
-set imap_pass = $my_pass
-set spoolfile = +INBOX
-set record = +Sent
-set postponed = +Drafts
-set trash = +Trash
-# mailboxes +Archives +Drafts +INBOX +Sent +Trash
+# source "~/.mutt/imap.muttrc"
+source "~/.mutt/offlineimap.muttrc"
 
-unset imap_passive
-set imap_check_subscribed
-set imap_keepalive = 300
+macro index,pager <f2> '<sync-mailbox><enter-command>source ~/.mutt/imap.muttrc<enter><change-folder>!<enter>'
+macro index,pager <f3> '<sync-mailbox><enter-command>source ~/.mutt/offlineimap.muttrc<enter><change-folder>!<enter>'
+macro index 'c' '<change-folder>?<change-dir><home>^K=<enter>'
 set mail_check = 60
 
 # SMTP
-set sendmail ="/usr/bin/msmtp"
-set realname = $my_user
-set from = $my_addr
-set use_from = yes
-set smtp_url = smtps://$imap_user:$imap_pass@$hostname
-set ssl_force_tls = yes
-set ssl_starttls = no
+source "~/.mutt/smtp.muttrc"
 
 # BIND
 # Move the highlight to the previous mailbox

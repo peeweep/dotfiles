@@ -1,0 +1,24 @@
+# Encrypted Mutt IMAP/SMTP Passwords
+# edit ~/.mutt/mutt_pass
+#  set my_pass = "your_password"
+#  set my_user = username
+#  set my_addr = username@example.com
+#  set hostname = mail.example.com
+# gpg -r your_fpri -e ~/.mutt/mutt_pass
+# rm ~/.mutt/mutt_pass
+
+source "gpg -dq ~/.mutt/mutt_pass.gpg |"
+
+# IMAP
+set folder = imaps://$hostname/
+set imap_user = $my_addr
+set imap_pass = $my_pass
+set spoolfile = +INBOX
+set record = +Sent
+set postponed = +Drafts
+set trash = +Trash
+
+#unset imap_passive
+set imap_check_subscribed
+set imap_keepalive = 300
+

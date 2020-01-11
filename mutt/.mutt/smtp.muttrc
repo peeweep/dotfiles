@@ -1,0 +1,20 @@
+# Encrypted Mutt IMAP/SMTP Passwords
+# edit ~/.mutt/mutt_pass
+#  set my_pass = "your_password"
+#  set my_user = username
+#  set my_addr = username@example.com
+#  set hostname = mail.example.com
+# gpg -r your_fpri -e ~/.mutt/mutt_pass
+# rm ~/.mutt/mutt_pass
+
+source "gpg -dq ~/.mutt/mutt_pass.gpg |"
+
+# SMTP
+set sendmail ="/usr/bin/msmtp"
+set realname = $my_user
+set from = $my_addr
+set use_from = yes
+set smtp_url = smtps://$my_addr:$my_pass@$hostname
+set ssl_force_tls = yes
+set ssl_starttls = no
+

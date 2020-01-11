@@ -256,5 +256,5 @@ supersm git
 # makepkg and pacman
 sudo supersm devtools --target /
 # mutt
-sudo pacman -S neomutt msmtp
+sudo pacman -S neomutt msmtp offlineimap
 supersm mutt

@@ -1,0 +1,33 @@
+[general]
+ui = blinkenlights
+accounts = privateemail
+maxsyncaccounts = 2
+fsync = False
+pythonfile = ~/.mutt/offlineimap.py
+
+[Account privateemail]
+localrepository = privateemail_local
+remoterepository = privateemail_remote
+autorefresh = 1
+
+[Repository privateemail_local]
+type = Maildir
+localfolders = ~/.mutt/mail/privateemail/
+
+[Repository privateemail_remote]
+type = IMAP
+ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+
+remotehost = mail.privateemail.com
+remoteport = 993
+remoteuser = peeweep@0x0.ee
+
+# Encrypted Mutt IMAP/SMTP Passwords
+# edit ~/.mutt/offlineimap_privateemail_pass
+#  your_password
+# gpg -r your_fpri -e ~/.mutt/offlineimap_privateemail_pass
+# rm ~/.mutt/offlineimap_privateemail_pass
+remotepasseval = mailpasswd("privateemail")
+
+realdelete = yes
