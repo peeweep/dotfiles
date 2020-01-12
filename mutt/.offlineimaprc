@@ -1,7 +1,6 @@
 [general]
 ui = ttyui
 accounts = privateemail
-maxsyncaccounts = 2
 fsync = False
 pythonfile = ~/.mutt/offlineimap.py
 
