@@ -119,7 +119,7 @@ pacman_unofficial_packages() {
 
   # install unofficial packages
   sudo pacman -Syu fcitx5-chinese-addons-git fcitx5-gtk-git p7zip-zstd-codec \
-    nerd-fonts-complete supersm visual-studio-code-bin unzip-iconv
+    nerd-fonts-complete supersm-git visual-studio-code-bin unzip-iconv
 
   # install gpu driver
   gpu_model=$(lspci -mm | awk -F '\"|\" \"|\\(' '/"Display|"3D|"VGA/')
