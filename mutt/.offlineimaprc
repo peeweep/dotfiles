@@ -1,5 +1,5 @@
 [general]
-ui = blinkenlights
+ui = ttyui
 accounts = privateemail
 maxsyncaccounts = 2
 fsync = False
