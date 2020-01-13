@@ -1,32 +1,41 @@
 [general]
 ui = ttyui
-accounts = privateemail
+accounts = mailboxes
 fsync = False
 pythonfile = ~/.mutt/offlineimap.py
 
-[Account privateemail]
-localrepository = privateemail_local
-remoterepository = privateemail_remote
+[Account mailboxes]
+localrepository = local
+remoterepository = remote
 autorefresh = 1
 
-[Repository privateemail_local]
+[Repository local]
 type = Maildir
-localfolders = ~/.mutt/mail/privateemail/
+localfolders = ~/.mutt/mailboxes/
 
-[Repository privateemail_remote]
+[Repository remote]
 type = IMAP
 ssl = yes
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 
-remotehost = mail.privateemail.com
-remoteport = 993
-remoteuser = peeweep@0x0.ee
+# set value to ~/.mutt/offlineimap_*
 
-# Encrypted Mutt IMAP/SMTP Passwords
-# edit ~/.mutt/offlineimap_privateemail_pass
-#  your_password
-# gpg -r your_fpri -e ~/.mutt/offlineimap_privateemail_pass
-# rm ~/.mutt/offlineimap_privateemail_pass
-remotepasseval = mailpasswd("privateemail")
+# ~/.mutt/offlineimap_host
+remotehosteval = decrypt("host")
 
+# ~/.mutt/offlineimap_pass
+remotepasseval = decrypt("pass")
+
+# ~/.mutt/offlineimap_port
+remoteporteval = decrypt("port")
+
+# ~/.mutt/offlineimap_user
+remoteusereval = decrypt("user")
+
+# GPG Encrypt:
+# for i in $(ls ~/.mutt/offlineimap_* | grep -Ev ".gpg"); do; gpg -r your_fpri -e "${i}"; done
+
+folderfilter = lambda folder: not re.search('(Calendar.*|Contacts|Conversation\ History|Journal|Notes|Outbox|Tasks)', folder)
+
+createfolders = False
 realdelete = yes

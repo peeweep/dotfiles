@@ -14,9 +14,9 @@ set folder = imaps://$hostname/
 set imap_user = $my_addr
 set imap_pass = $my_pass
 set spoolfile = +INBOX
-set record = +Sent
+set record = +"Sent Items"
 set postponed = +Drafts
-set trash = +Trash
+set trash = +"Deleted Items"
 
 #unset imap_passive
 set imap_check_subscribed

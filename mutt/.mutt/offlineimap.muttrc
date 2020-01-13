@@ -1,26 +1,24 @@
 # offlineimap
-set folder = "~/.mutt/mail/privateemail"
+set folder = "~/.mutt/mailboxes"
 set spoolfile = +INBOX
-set record = +Sent
-set trash = +Trash
+set record = +"Sent Items"
+set trash = +"Deleted Items"
+
 #######################################
 #
 #  A shell for update mailboxes
 #
-#  $ account="privateemail"; for i in ~/.mutt/mail/${account}/* ; do ; result=$(echo $i | awk -F "/.mutt/mail/${account}/" '{print $2}') ; echo +\"${result}\" \\; done
+#  https://raw.githubusercontent.com/peeweep/dotfiles/master/mutt/.mutt/get_offlineimap_folder.sh
 #
 ########################################
 
 mailboxes +"Archive" \
-+"Archive.2019" \
-+"Archive.2020" \
++"Deleted Items" \
 +"Drafts" \
 +"INBOX" \
++"Junk Email" \
 +"List" \
-+"List.arch-projects" \
 +"List.linux-kernel" \
 +"nvchecker" \
-+"Sent" \
-+"Spam" \
-+"Trash" \
++"Sent Items" \
 
