@@ -3,6 +3,7 @@ set folder = "~/.mutt/mailboxes"
 set spoolfile = +INBOX
 set record = +"Sent Items"
 set trash = +"Deleted Items"
+set postponed = +Drafts
 
 #######################################
 #

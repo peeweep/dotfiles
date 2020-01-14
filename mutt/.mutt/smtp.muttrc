@@ -14,7 +14,8 @@ set sendmail ="/usr/bin/msmtp"
 set realname = $my_user
 set from = $my_addr
 set use_from = yes
-set smtp_url = smtps://$my_addr:$my_pass@$hostname
+set smtp_url = smtp://$my_addr:$my_pass@$hostname
 set ssl_force_tls = yes
-set ssl_starttls = no
+set smtp_authenticators = "login"
+# set ssl_starttls = no
 
