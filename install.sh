@@ -16,7 +16,7 @@ pacman_peeweep() {
     echo "[peeweep]"
     echo "SigLevel = Never"
     echo "Server = https://peeweep.duckdns.org/archlinux/x86_64"
-    echo "Server = https://peeweep.de/~pkg/archlinux/x86_64"
+    echo "Server = https://peeweep.de/pkg/archlinux/x86_64"
   } | sudo tee -a /etc/pacman.conf
   sudo pacman -Syu curl
   curl https://peeweep.de/pubring.gpg | sudo pacman-key -a -
