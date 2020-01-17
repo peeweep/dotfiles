@@ -19,6 +19,7 @@ mailboxes +"Archive" \
 +"INBOX" \
 +"Junk Email" \
 +"List" \
++"List.arch-announce" \
 +"List.aur-requests" \
 +"List.linux-kernel" \
 +"nvchecker" \
