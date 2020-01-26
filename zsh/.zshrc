@@ -6,7 +6,6 @@ export TERM="xterm-256color"
 # Path to your oh-my-zsh installation.
 export ZSH=/usr/share/oh-my-zsh
 
-alias vim=nvim
 alias mutt="LANGUAGE=ru_RU.UTF-8 neomutt"
 alias farsee="curl -F \"c=@-\" \"https://fars.ee/\""
 source /usr/share/doc/pkgfile/command-not-found.zsh
