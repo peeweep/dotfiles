@@ -1,3 +1,5 @@
+# Patch
+source ~/.mutt/diff_view.muttrc
 # Theme
 source ~/.mutt/dracula.muttrc
 # source ~/.mutt/colors-gruvbox-shuber.muttrc

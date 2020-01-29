@@ -20,6 +20,7 @@ mailboxes +"Archive" \
 +"Junk Email" \
 +"List" \
 +"List.arch-announce" \
++"List.arch-projects" \
 +"List.aur-requests" \
 +"List.linux-kernel" \
 +"nvchecker" \
