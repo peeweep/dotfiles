@@ -8,18 +8,19 @@ set mbox_type = Maildir
 set header_cache = ~/.mutt/cache/headers
 set message_cachedir = ~/.mutt/cache/bodies
 set certificate_file = ~/.mutt/certificates
-set tmpdir = "/var/tmp"
-set sidebar_sort_method = 'alpha'
+set tmpdir = /var/tmp
+set sidebar_sort_method = alpha
 set sort = threads
 set sort_aux = last-date-received
-set sidebar_format = '%B%?F? [%F]?%* %?N?%N/?%S'
+set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+set index_format = "%4C %Z %{%Y.%m.%d [%H:%M]} %-50.50f %s"
 set sidebar_visible = yes
 set sidebar_width = 40
 set pager_index_lines = 10
 
 # IMAP
-# source "~/.mutt/imap.muttrc"
-source "~/.mutt/offlineimap.muttrc"
+# source ~/.mutt/imap.muttrc
+source ~/.mutt/offlineimap.muttrc
 
 macro index,pager <f2> '<sync-mailbox><enter-command>source ~/.mutt/imap.muttrc<enter><change-folder>!<enter>'
 macro index,pager <f3> '<sync-mailbox><enter-command>source ~/.mutt/offlineimap.muttrc<enter><change-folder>!<enter>'
@@ -27,7 +28,7 @@ macro index 'c' '<change-folder>?<change-dir><home>^K=<enter>'
 set mail_check = 60
 
 # SMTP
-source "~/.mutt/smtp.muttrc"
+source ~/.mutt/smtp.muttrc
 
 # BIND
 # Move the highlight to the previous mailbox
@@ -36,4 +37,3 @@ bind index,pager \Cp sidebar-prev
 bind index,pager \Cn sidebar-next
 # Open the highlighted mailbox
 bind index,pager \Co sidebar-open
-bind index,pager \Cf imap-fetch-mail
