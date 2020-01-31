@@ -18,7 +18,7 @@ pacman_peeweep() {
     echo "Server = https://peeweep.duckdns.org/archlinux/x86_64"
     echo "Server = https://repo.peeweep.de/archlinux/x86_64"
   } | sudo tee -a /etc/pacman.conf
-  sudo pacman -Syu curl
+  sudo pacman -Syu --needed curl
   curl https://peeweep.de/pubring.gpg | sudo pacman-key -a -
   sudo pacman-key --lsign-key A4A9C04411BE1F71
   sudo pacman -Syu
@@ -100,14 +100,13 @@ linux_ck() {
 
 pacman_unofficial_packages() {
   # kernel-modules-hook
-  sudo pacman -Syu kernel-modules-hook
+  sudo pacman -Syu --needed kernel-modules-hook
   sudo systemctl enable linux-modules-cleanup
-  sudo systemctl start linux-modules-cleanup
 
   # install kernel
   if [[ $(sudo dmidecode -s bios-vendor) == "Apple Inc." ]]; then
-    sudo pacman -S linux-macbook linux-macbook-headers
-    sudo pacman -S xorg-xrandr upower tlp-rdw broadcom-wl-dkms
+    sudo pacman --sync --needed linux-macbook linux-macbook-headers
+    sudo pacman --sync --needed xorg-xrandr upower tlp-rdw broadcom-wl-dkms
     sudo systemctl enable macbook-wakeup.service
     sudo systemctl enable tlp.service tlp-sleep.service
     sudo sed -i 's/blacklist brcmfmac/\#blacklist brcmfmac/g' \
@@ -118,17 +117,17 @@ pacman_unofficial_packages() {
   fi
 
   # install unofficial packages
-  sudo pacman -Syu fcitx5-chinese-addons-git fcitx5-gtk-git p7zip-zstd-codec \
+  sudo pacman -Syu --needed fcitx5-chinese-addons-git fcitx5-gtk-git p7zip-zstd-codec \
     nerd-fonts-complete supersm-git visual-studio-code-bin unzip-iconv
 
   # install gpu driver
   gpu_model=$(lspci -mm | awk -F '\"|\" \"|\\(' '/"Display|"3D|"VGA/')
   if echo "${gpu_model}" | grep NVIDIA; then
-    sudo pacman -S nvidia-dkms
+    sudo pacman --sync --needed nvidia-dkms
   fi
   if echo "${gpu_model}" | grep Intel; then
     # I'm not clear intel device
-    sudo pacman -S mesa xf86-video-intel
+    sudo pacman --sync --needed mesa xf86-video-intel
   fi
 
   sudo pacman -Rs nvidia
@@ -139,13 +138,13 @@ pacman_unofficial_packages() {
   sudo pacman -Rs linux-lts-headers
 
   # rebuild grub
-  sudo pacman -Syu grub efibootmgr os-prober ntfs-3g
+  sudo pacman -Syu --needed grub efibootmgr os-prober ntfs-3g
   sudo grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=grub
   sudo grub-mkconfig -o /boot/grub/grub.cfg
 }
 
 pacman_official_packages() {
-  sudo pacman -Syu alsa-utils autopep8 axel bind-tools chromium cloc cmake dmidecode \
+  sudo pacman -Syu --needed alsa-utils autopep8 axel bind-tools chromium cloc cmake dmidecode \
     exfat-utils flameshot gdb htop jdk-openjdk jq jre-openjdk lldb man mpv ncdu \
     neofetch neovim net-tools noto-fonts-cjk noto-fonts-emoji noto-fonts-extra \
     p7zip pacman-contrib pavucontrol pkgfile pkgstats pulseaudio python-pylint screen \
@@ -158,8 +157,7 @@ pacman_official_packages() {
 }
 
 pacman_haveged() {
-  sudo pacman -Syu haveged
-  sudo systemctl start haveged
+  sudo pacman -Syu --needed haveged
   sudo systemctl enable haveged
 }
 
@@ -184,29 +182,29 @@ fcitx5_init() {
 
 omz_init() {
   sudo mkdir -p /usr/share/fonts/OTF/
-  sudo pacman -S nerd-fonts-complete zsh zsh-autosuggestions oh-my-zsh-git zsh-theme-powerlevel9k
+  sudo pacman --sync --needed nerd-fonts-complete zsh zsh-autosuggestions oh-my-zsh-git zsh-theme-powerlevel9k
   sudo ln -s /usr/share/zsh-theme-powerlevel9k /usr/share/oh-my-zsh/themes/zsh-theme-powerlevel9k
   supersm zsh
 }
 
 spacevim() {
-  sudo pacman -S vim
+  sudo pacman --sync --needed vim
   curl -sLf https://spacevim.org/install.sh | bash
   vim
 }
 
 sound_panel() {
-  sudo pacman -S pulseaudio xfce4-pulseaudio-plugin xfce4-panel pavucontrol
+  sudo pacman --sync --needed pulseaudio xfce4-pulseaudio-plugin xfce4-panel pavucontrol
   echo "xfce4 volume panel installed"
 }
 
 xfceterminal_scheme() {
-  sudo pacman -S xfce4-terminal
+  sudo pacman --sync --needed xfce4-terminal
   supersm xfce4-terminal
 }
 
 add_konsole_scheme() {
-  sudo pacman -S konsole
+  sudo pacman --sync --needed konsole
   sudo supersm konsole --target /
 }
 
@@ -225,7 +223,7 @@ desktop_session() {
 }
 
 i3gaps() {
-  sudo pacman -S i3-gaps i3status-rust-git picom numlockx feh rofi xorg-xrdb sddm
+  sudo pacman --sync --needed i3-gaps i3status-rust-git picom numlockx feh rofi xorg-xrdb sddm
   sudo systemctl enable sddm
   supersm i3
   xfceterminal_scheme
@@ -243,7 +241,7 @@ i3)
   i3gaps
   ;;
 gnome)
-  sudo pacman -S gnome evolution gnome-tweaks sddm
+  sudo pacman --sync --needed gnome evolution gnome-tweaks sddm
   sudo systemctl enable sddm
   ;;
 esac
@@ -256,5 +254,5 @@ supersm git
 # makepkg and pacman
 sudo supersm devtools --target /
 # mutt
-sudo pacman -S neomutt msmtp offlineimap
+sudo pacman --sync --needed neomutt neovim msmtp offlineimap
 supersm mutt
