@@ -6,3 +6,5 @@
 [core]
 	editor = nvim
 	excludesfile = ~/.gitignore
+[alias]
+	commitutc = !git commit --date=\"$(date --utc +%Y-%m-%dT%H:%M:%S%z)\"
