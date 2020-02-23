@@ -187,12 +187,6 @@ omz_init() {
   supersm zsh
 }
 
-spacevim() {
-  sudo pacman --sync --needed vim
-  curl -sLf https://spacevim.org/install.sh | bash
-  vim
-}
-
 sound_panel() {
   sudo pacman --sync --needed pulseaudio xfce4-pulseaudio-plugin xfce4-panel pavucontrol
   echo "xfce4 volume panel installed"
@@ -208,6 +202,13 @@ add_konsole_scheme() {
   sudo supersm konsole --target /
 }
 
+vim_init() {
+  sudo pacman --sync --needed vim-plug-git neovim vim neovim-qt
+  supersm vim
+  ln -sf ~/.config/nvim/init.vim ~/.vimrc
+  nvim -c :PlugInstall
+}
+
 desktop_session() {
   case "${XDG_CURRENT_DESKTOP}" in
   KDE)
@@ -219,7 +220,7 @@ desktop_session() {
     ;;
   esac
   omz_init
-  spacevim
+  vim_init
 }
 
 i3gaps() {

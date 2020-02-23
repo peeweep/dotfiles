@@ -1,6 +1,17 @@
+# macos
 .DS_Store
+
+# archlinux devtools
 *.pkg.tar.xz
 *.pkg.tar.zst
 pkg/
 src/
 *.log
+
+# clangd
+.clangd
+compile_commands.json
+
+# cmake
+build
+
