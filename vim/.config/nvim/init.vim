@@ -5,56 +5,50 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 " clang-foramt
 Plug 'rhysd/vim-clang-format'
 " colorscheme
-Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
-" lsp
-Plug 'prabirshrestha/vim-lsp'
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
+" coc
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" :CocInstall coc-python coc-clangd
 call plug#end()
 
 " nerdtree
-let NERDTreeShowHidden=1
-let NERDTreeIgnore=['\.DS_Store$', '\.git$']
+let g:NERDTreeShowHidden=1
+let g:NERDTreeIgnore=['\.DS_Store$', '\.git$']
+
 " clang-format
 let g:clang_format#command = 'clang-format'
 autocmd FileType c ClangFormatAutoEnable
 let g:clang_format#detect_style_file = 1
-" python-language-server
-if executable('pyls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'pyls',
-        \ 'cmd': {server_info->['pyls']},
-        \ 'whitelist': ['python'],
-        \ })
-endif
-" " clangd
-" generate compile_commands.json by cmake:
-" $ cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -Bbuild; ln -sf `realpath ./build/compile_commands.json` ./
-if executable('clangd')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'clangd',
-        \ 'cmd': {server_info->['clangd', '-background-index']},
-        \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
-        \ })
-endif
+
 " colorscheme
 colorscheme challenger_deep
 if has('nvim') || has('termguicolors')
     set termguicolors
 endif
-let g:lightline = { 'colorscheme': 'challenger_deep'}
 
+" full file path
+let g:airline_section_c='%F'
+
+" vim
 set number
 set relativenumber
 set autoindent
 set expandtab
 set tabstop=2
 set shiftwidth=2
+set nobackup
+set nowritebackup
+set showtabline=2
 
+" env
 let g:python_host_prog = '/usr/bin/python'
 let g:python3_host_prog = '/usr/bin/python3'
+
+" jump to the last position when reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
 
 " disable ← → ↑ ↓
 nnoremap <Up> :echomsg "Use k"<cr>
@@ -62,7 +56,14 @@ nnoremap <Down> :echomsg "Use k"<cr>
 nnoremap <Left> :echomsg "Use h"<cr>
 nnoremap <Right> :echomsg "Use l"<cr>
 
-" next prev confirm
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
+" switch tab
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
+noremap <leader>0 :tablast<cr>

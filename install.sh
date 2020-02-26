@@ -203,7 +203,9 @@ add_konsole_scheme() {
 }
 
 vim_init() {
-  sudo pacman --sync --needed vim-plug-git neovim vim neovim-qt python-language-server clang
+  sudo pacman --sync --needed vim-plug-git neovim vim neovim-qt xclip
+  sudo pacman --sync --needed python-language-server python-pynvim
+  sudo pacman --sync --needed clang nodejs-neovim ruby-neovim
   supersm vim
   ln -sf ~/.config/nvim/init.vim ~/.vimrc
   nvim -c :PlugInstall
