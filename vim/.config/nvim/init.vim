@@ -9,7 +9,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 " coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" :CocInstall coc-python coc-clangd
 call plug#end()
 
 " nerdtree
@@ -40,10 +39,7 @@ set shiftwidth=2
 set nobackup
 set nowritebackup
 set showtabline=2
-
-" env
-let g:python_host_prog = '/usr/bin/python'
-let g:python3_host_prog = '/usr/bin/python3'
+set ff=unix
 
 " jump to the last position when reopening a file
 if has("autocmd")
@@ -56,14 +52,21 @@ nnoremap <Down> :echomsg "Use k"<cr>
 nnoremap <Left> :echomsg "Use h"<cr>
 nnoremap <Right> :echomsg "Use l"<cr>
 
+" NERDTree
+nnoremap <space>e :NERDTree<cr>
+
+" Formatting selected code.
+vnoremap <leader>f <Plug>(coc-format-selected)
+" Formatting selected json.
+vnoremap <space>fj :CocCommand prettier.formatFile<cr>
+
+" yank and paste
+nnoremap <leader>p "+P<cr>
+vnoremap <leader>y "+y<cr>
+
 " switch tab
 noremap <leader>1 1gt
 noremap <leader>2 2gt
 noremap <leader>3 3gt
 noremap <leader>4 4gt
-noremap <leader>5 5gt
-noremap <leader>6 6gt
-noremap <leader>7 7gt
-noremap <leader>8 8gt
-noremap <leader>9 9gt
 noremap <leader>0 :tablast<cr>
