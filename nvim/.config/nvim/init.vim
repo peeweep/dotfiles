@@ -42,6 +42,7 @@ set nobackup
 set nowritebackup
 set showtabline=2
 set ff=unix
+set modifiable
 
 " jump to the last position when reopening a file
 if has("autocmd")
