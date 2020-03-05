@@ -7,6 +7,8 @@ Plug 'rhysd/vim-clang-format'
 " colorscheme
 Plug 'vim-airline/vim-airline'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
+" translator
+Plug 'voldikss/vim-translator'
 " coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
@@ -59,6 +61,17 @@ nnoremap <space>e :NERDTree<cr>
 vnoremap <leader>f <Plug>(coc-format-selected)
 " Formatting selected json.
 vnoremap <space>fj :CocCommand prettier.formatFile<cr>
+
+" vim-translator
+" Echo translation in the cmdline
+nmap <silent> <Leader>t <Plug>Translate
+vmap <silent> <Leader>t <Plug>TranslateV
+" Display translation in a window
+nmap <silent> <Leader>w <Plug>TranslateW
+vmap <silent> <Leader>w <Plug>TranslateWV
+" Replace the text with translation
+nmap <silent> <Leader>r <Plug>TranslateR
+vmap <silent> <Leader>r <Plug>TranslateRV
 
 " yank and paste
 nnoremap <leader>p "+P<cr>
