@@ -43,6 +43,10 @@ set nowritebackup
 set showtabline=2
 set ff=unix
 set modifiable
+set encoding=utf-8
+set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbkgb2312,cp936
+set termencoding=utf-8
+set fileencoding=utf-8
 
 " jump to the last position when reopening a file
 if has("autocmd")
