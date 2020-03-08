@@ -11,7 +11,12 @@ Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'voldikss/vim-translator'
 " coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" templates
+Plug 'aperezdc/vim-template'
 call plug#end()
+
+" aperezdc/vim-template
+let g:email = substitute(system("git config user.email"), '\n\+$', '', '')
 
 " nerdtree
 let g:NERDTreeShowHidden=1
@@ -47,6 +52,7 @@ set encoding=utf-8
 set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbkgb2312,cp936
 set termencoding=utf-8
 set fileencoding=utf-8
+set paste
 
 " jump to the last position when reopening a file
 if has("autocmd")
