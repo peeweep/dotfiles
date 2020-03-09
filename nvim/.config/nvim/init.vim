@@ -52,7 +52,6 @@ set encoding=utf-8
 set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbkgb2312,cp936
 set termencoding=utf-8
 set fileencoding=utf-8
-set paste
 
 " jump to the last position when reopening a file
 if has("autocmd")
