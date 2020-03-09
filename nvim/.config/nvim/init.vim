@@ -16,6 +16,7 @@ Plug 'aperezdc/vim-template'
 call plug#end()
 
 " aperezdc/vim-template
+let g:username = substitute(system("git config user.name"), '\n\+$', '', '')
 let g:email = substitute(system("git config user.email"), '\n\+$', '', '')
 
 " nerdtree
