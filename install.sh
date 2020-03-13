@@ -205,10 +205,9 @@ add_konsole_scheme() {
 vim_init() {
   sudo pacman --sync --needed vim-plug-git neovim vim neovim-qt xclip
   sudo pacman --sync --needed python-language-server python-pynvim
-  sudo pacman --sync --needed nodejs-neovim ruby-neovim
-  sudo pacman --sync --needed ccls-git
-  supersm vim
-  ln -sf ~/.config/nvim/init.vim ~/.vimrc
+  sudo pacman --sync --needed nodejs-neovim
+  sudo pacman --sync --needed clang
+  supersm nvim
   nvim -c :PlugInstall
 }
 
@@ -241,12 +240,12 @@ fcitx5_init
 desktop_session
 
 case $1 in
-i3)
-  i3gaps
-  ;;
 gnome)
   sudo pacman --sync --needed gnome evolution gnome-tweaks sddm
   sudo systemctl enable sddm
+  ;;
+*)
+  i3gaps
   ;;
 esac
 
