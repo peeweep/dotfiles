@@ -13,6 +13,8 @@ Plug 'voldikss/vim-translator'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " templates
 Plug 'aperezdc/vim-template'
+" markdown preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 call plug#end()
 
 " aperezdc/vim-template
