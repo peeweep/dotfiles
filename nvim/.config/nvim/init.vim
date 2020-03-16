@@ -50,7 +50,7 @@ set showtabline=2
 set ff=unix
 set modifiable
 set encoding=utf-8
-set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbkgb2312,cp936
+set fencs=utf-8,ucs-bom,gb18030,gbkgb2312,shift-jis,cp936
 set termencoding=utf-8
 set fileencoding=utf-8
 
