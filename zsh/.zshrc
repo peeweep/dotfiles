@@ -17,7 +17,7 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
 # Powerlevel9k
-ZSH_THEME="zsh-theme-powerlevel9k/powerlevel9k"
+ZSH_THEME="zsh-theme-powerlevel10k/powerlevel10k"
 # Left
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir dir_writable vcs)
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
