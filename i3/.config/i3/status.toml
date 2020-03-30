@@ -37,17 +37,12 @@ xrandr = "  "
 time = "  "
 
 [[block]]
-block = "battery"
-driver = "upower"
-format = "{percentage}% {time} {power}"
-
-[[block]]
 block = "music"
 buttons = ["play", "next"]
 
 [[block]]
 block = "net"
-device = "wlp3s0"
+device = "enp27s0"
 ssid = true
 speed_up = false
 speed_down = true
