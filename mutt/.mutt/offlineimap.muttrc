@@ -19,11 +19,9 @@ mailboxes +"Archive" \
 +"INBOX" \
 +"Junk Email" \
 +"List" \
-+"List.amd-gfx" \
 +"List.arch-announce" \
 +"List.arch-projects" \
 +"List.aur-requests" \
-+"List.linux-kernel" \
 +"nvchecker" \
 +"Sent Items" \
 
