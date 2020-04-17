@@ -68,8 +68,6 @@ nnoremap <Right> :echomsg "Use l"<cr>
 " NERDTree
 nnoremap <space>e :NERDTree<cr>
 
-" Formatting selected code.
-vnoremap <leader>f <Plug>(coc-format-selected)
 " Formatting selected json.
 vnoremap <space>fj :CocCommand prettier.formatFile<cr>
 
