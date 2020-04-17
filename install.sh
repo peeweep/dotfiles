@@ -145,7 +145,7 @@ pacman_unofficial_packages() {
 
 pacman_official_packages() {
   sudo pacman -Syu --needed alsa-utils autopep8 axel bind-tools chromium cloc cmake dmidecode \
-    exfat-utils flameshot gdb htop jdk-openjdk jq jre-openjdk lldb man mpv ncdu \
+    exfat-utils flameshot gdb htop jdk-openjdk jq jre-openjdk linux-firmware lldb man mpv ncdu \
     neofetch neovim net-tools noto-fonts-cjk noto-fonts-emoji noto-fonts-extra \
     p7zip pacman-contrib pavucontrol pkgfile pkgstats pulseaudio python-pylint screen \
     screenfetch shellcheck shfmt telegram-desktop tldr tmux tree ttf-opensans unrar \
@@ -205,7 +205,7 @@ add_konsole_scheme() {
 vim_init() {
   sudo pacman --sync --needed vim-plug-git neovim vim neovim-qt xclip
   sudo pacman --sync --needed python-language-server python-pynvim
-  sudo pacman --sync --needed nodejs-neovim
+  sudo pacman --sync --needed npm nodejs-neovim
   sudo pacman --sync --needed clang
   supersm nvim
   nvim -c :PlugInstall
