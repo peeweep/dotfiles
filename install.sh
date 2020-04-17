@@ -207,6 +207,7 @@ vim_init() {
   sudo pacman --sync --needed python-language-server python-pynvim
   sudo pacman --sync --needed npm nodejs-neovim
   sudo pacman --sync --needed clang
+  sudo pacman --sync --needed fzf
   supersm nvim
   nvim -c :PlugInstall
 }
