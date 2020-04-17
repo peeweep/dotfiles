@@ -14,6 +14,13 @@ bat_half           = "  "
 bat_quarter        = "  "
 bat_three_quarters = "  "
 
+# Backlight
+backlight_full     = "  "
+backlight_partial1 = "  "
+backlight_partial2 = "  "
+backlight_partial3 = "  "
+backlight_empty    = "  "
+
 # Network
 net_up       = "  "
 net_down     = "  "
@@ -64,6 +71,9 @@ interval = 5
 [[block]]
 block = "sound"
 driver = "auto"
+
+[[block]]
+block = "backlight"
 
 [[block]]
 block = "time"
