@@ -18,6 +18,11 @@ set sidebar_width = 30
 set index_format = "%4C %Z %{%Y.%m.%d [%H:%M]} %-30.30L %s"
 set pager_index_lines = 10
 
+set crypt_use_gpgme=yes
+set postpone_encrypt = yes
+set pgp_self_encrypt = yes
+set crypt_use_pka = no
+
 # IMAP
 # source ~/.mutt/imap.muttrc
 source ~/.mutt/offlineimap.muttrc
