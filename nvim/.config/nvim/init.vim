@@ -1,8 +1,6 @@
 call plug#begin('~/.vim/plugged')
 " git
 Plug 'tpope/vim-fugitive'
-" fzf
-Plug 'junegunn/fzf.vim'
 " nerdtree
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
