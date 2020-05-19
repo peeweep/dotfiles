@@ -48,18 +48,9 @@ block = "music"
 buttons = ["play", "next"]
 
 [[block]]
-block = "net"
-device = "enp27s0"
-ssid = true
-speed_up = false
-speed_down = true
-hide_missing = true
-hide_inactive = true
-
-[[block]]
 block = "weather"
 format = "{weather} ({location}) {temp}°"
-service = { name = "openweathermap", api_key = "42a1771a0b787bf12e734ada0cfc80cb", city_id = "1805753", units = "metric" }
+service = { name = "openweathermap", api_key = "42a1771a0b787bf12e734ada0cfc80cb", city_id = "1796236", units = "metric" }
 interval = 600
 
 [[block]]
@@ -71,9 +62,6 @@ interval = 5
 [[block]]
 block = "sound"
 driver = "auto"
-
-[[block]]
-block = "backlight"
 
 [[block]]
 block = "time"
