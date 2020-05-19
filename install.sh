@@ -4,7 +4,7 @@ pacman_archlinuxcn() {
   {
     echo "[archlinuxcn]"
     echo "SigLevel = Never"
-    echo "Server = https://mirrors.sjtug.sjtu.edu.cn/archlinux-cn/\$arch"
+    echo "Server = https://mirrors.bfsu.edu.cn/archlinuxcn/\$arch"
     echo "Server = https://repo.archlinuxcn.org/\$arch"
   } | sudo tee -a /etc/pacman.conf
   sudo pacman -Syu archlinuxcn-keyring
@@ -29,7 +29,7 @@ pacman_ck() {
   {
     echo "[repo-ck]"
     echo "SigLevel = Never"
-    echo "Server = https://mirrors.tuna.tsinghua.edu.cn/repo-ck/\$arch"
+    echo "Server = https://mirrors.bfsu.edu.cn/repo-ck/\$arch"
     echo "Server = http://repo-ck.com/\$arch"
   } | sudo tee -a /etc/pacman.conf
   sudo pacman-key -r 5EE46C4C && sudo pacman-key --lsign-key 5EE46C4C
