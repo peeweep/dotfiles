@@ -10,3 +10,4 @@ IndentWidth: 2
 MaxEmptyLinesToKeep: 1
 SortIncludes: true
 UseTab: Never
+ColumnLimit: 98
