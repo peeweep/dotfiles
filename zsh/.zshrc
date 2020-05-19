@@ -8,6 +8,7 @@ export ZSH=/usr/share/oh-my-zsh
 
 alias vim=nvim
 alias farsee="curl -F \"c=@-\" \"https://fars.ee/\""
+alias setworkmail="git config user.name zhangjinqiang; git config user.email zhangjinqiang@uniontech.com"
 source /usr/share/doc/pkgfile/command-not-found.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
@@ -15,16 +16,7 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
-# Powerlevel9k
-ZSH_THEME="zsh-theme-powerlevel10k/powerlevel10k"
-# Left
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir dir_writable vcs)
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-# Right
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs history ram load time)
-# for nerd-font
-POWERLEVEL9K_MODE="nerdfont-complete"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load

@@ -182,8 +182,7 @@ fcitx5_init() {
 
 omz_init() {
   sudo mkdir -p /usr/share/fonts/OTF/
-  sudo pacman --sync --needed nerd-fonts-complete zsh zsh-autosuggestions oh-my-zsh-git zsh-theme-powerlevel10k
-  sudo ln -s /usr/share/zsh-theme-powerlevel10k /usr/share/oh-my-zsh/themes/zsh-theme-powerlevel10k
+  sudo pacman --sync --needed zsh zsh-autosuggestions oh-my-zsh-git
   supersm zsh
 }
 
