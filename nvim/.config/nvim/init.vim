@@ -13,13 +13,7 @@ Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'voldikss/vim-translator'
 " coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" templates
-Plug 'aperezdc/vim-template'
 call plug#end()
-
-" aperezdc/vim-template
-let g:username = substitute(system("git config user.name"), '\n\+$', '', '')
-let g:email = substitute(system("git config user.email"), '\n\+$', '', '')
 
 " nerdtree
 let g:NERDTreeShowHidden=1
