@@ -10,6 +10,10 @@ export ZSH=/usr/share/oh-my-zsh
 alias vim=nvim
 alias farsee="curl -F \"c=@-\" \"https://fars.ee/\""
 alias setworkmail="git config user.name zhangjinqiang; git config user.email zhangjinqiang@uniontech.com"
+
+
+alias setgitproxy="git config --global http.proxy 'socks5://127.0.0.1:7891';git config --global https.proxy 'socks5://127.0.0.1:7891'"
+alias unsetgitproxy="git config --global --unset http.proxy;git config --global --unset https.proxy"
 source /usr/share/doc/pkgfile/command-not-found.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
