@@ -254,6 +254,8 @@ supersm clang
 supersm git
 # makepkg and pacman
 sudo supersm devtools --target /
+# ath10k QCA6174 driver
+sudo supersm ath10k -T /
 # mutt
 sudo pacman --sync --needed neomutt neovim msmtp offlineimap
 supersm mutt
