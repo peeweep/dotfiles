@@ -130,6 +130,11 @@ pacman_unofficial_packages() {
     sudo pacman --sync --needed mesa xf86-video-intel
   fi
 
+  # ath10k QCA6174 driver
+  if [[ -n $(lspci | grep "Qualcomm Atheros QCA6174 802.11ac Wireless Network Adapter [168c:003e] (rev 32)") ]]; then
+    sudo supersm ath10k -T /
+  fi
+
   sudo pacman -Rs nvidia
   sudo pacman -Rs linux
   sudo pacman -Rs linux-headers
@@ -254,8 +259,6 @@ supersm clang
 supersm git
 # makepkg and pacman
 sudo supersm devtools --target /
-# ath10k QCA6174 driver
-sudo supersm ath10k -T /
 # mutt
 sudo pacman --sync --needed neomutt neovim msmtp offlineimap
 supersm mutt
