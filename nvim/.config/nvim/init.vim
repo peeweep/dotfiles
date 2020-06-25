@@ -13,6 +13,8 @@ Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'voldikss/vim-translator'
 " coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" history
+Plug 'mhinz/vim-startify'
 call plug#end()
 
 " nerdtree
