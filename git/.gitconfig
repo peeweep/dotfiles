@@ -10,3 +10,5 @@
 	commitutc = !git commit --date=\"$(date --utc +%Y-%m-%dT%H:%M:%S%z)\"
 [push]
 	followTags = true
+[pull]
+	ff = only
