@@ -131,7 +131,7 @@ pacman_unofficial_packages() {
   fi
 
   # ath10k QCA6174 driver
-  if [[ -n $(lspci | grep "Qualcomm Atheros QCA6174 802.11ac Wireless Network Adapter [168c:003e] (rev 32)") ]]; then
+  if [[ -n $(lspci | grep "Qualcomm Atheros QCA6174 802.11ac Wireless Network Adapter") ]]; then
     sudo supersm ath10k -T /
   fi
 
