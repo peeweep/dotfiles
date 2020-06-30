@@ -120,6 +120,11 @@ pacman_unofficial_packages() {
   sudo pacman -Syu --needed fcitx5-chinese-addons-git fcitx5-gtk-git p7zip-zstd-codec \
     nerd-fonts-complete supersm-git visual-studio-code-bin unzip-iconv
 
+  # install zenpower-dkms-git
+  if [[ $(gcc -c -Q -march=native --help=target -o /dev/null | grep march | awk '{print $2}' | head -n1) == znver1 ]]; then
+    sudo pacman -S zenpower-dkms-git
+  fi
+
   # install gpu driver
   gpu_model=$(lspci -mm | awk -F '\"|\" \"|\\(' '/"Display|"3D|"VGA/')
   if echo "${gpu_model}" | grep NVIDIA; then
@@ -162,6 +167,7 @@ pacman_official_packages() {
 }
 
 pacman_haveged() {
+  # kernel buildin since linux 5.5
   sudo pacman -Syu --needed haveged
   sudo systemctl enable haveged
 }
@@ -171,7 +177,7 @@ pacman_mirrorlist() {
 }
 
 pacman_init() {
-  pacman_haveged
+  # pacman_haveged
   pacman_mirrorlist
   # add unofficial repo
   pacman_archlinuxcn
