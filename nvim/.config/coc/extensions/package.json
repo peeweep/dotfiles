@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "coc-json": ">=1.2.6",
-    "coc-prettier": ">=1.1.16",
+    "coc-pairs": ">=1.2.21",
+    "coc-prettier": ">=1.1.17",
     "coc-template": ">=1.2.5",
     "coc-tsserver": ">=1.5.2"
   }
