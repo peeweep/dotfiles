@@ -13,7 +13,6 @@ set sidebar_sort_method = alpha
 set sort = threads
 set sort_aux = last-date-received
 set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
-set sidebar_visible = yes
 set sidebar_width = 30
 set index_format = "%4C %Z %{%Y.%m.%d [%H:%M]} %-30.30L %s"
 set pager_index_lines = 10
@@ -45,3 +44,5 @@ bind index,pager \Cp sidebar-prev
 bind index,pager \Cn sidebar-next
 # Open the highlighted mailbox
 bind index,pager \Co sidebar-open
+# Switch the Sidebar on and off
+bind index,pager \Ce sidebar-toggle-visible
