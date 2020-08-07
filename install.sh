@@ -117,8 +117,9 @@ pacman_unofficial_packages() {
   fi
 
   # install unofficial packages
-  sudo pacman -Syu --needed fcitx5-chinese-addons-git fcitx5-gtk-git p7zip-zstd-codec \
-    nerd-fonts-complete supersm-git visual-studio-code-bin unzip-iconv
+  sudo pacman -Syu --needed fcitx5-config-qt-git fcitx5-git fcitx5-gtk-git fcitx5-material-color \
+    fcitx5-pinyin-moegirl-rime fcitx5-qt5-git fcitx5-rime-git nerd-fonts-complete p7zip-zstd-codec \
+    supersm-git visual-studio-code-bin unzip-iconv
 
   # install zenpower-dkms-git
   if [[ $(gcc -c -Q -march=native --help=target -o /dev/null | grep march | awk '{print $2}' | head -n1) == znver1 ]]; then
