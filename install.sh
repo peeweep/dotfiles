@@ -90,6 +90,9 @@ linux_ck() {
   znver1)
     group="ck-zen"
     ;;
+  znver2)
+    group="ck-zen2"
+    ;;
   *)
     group="ck-generic"
     ;;
@@ -118,12 +121,14 @@ pacman_unofficial_packages() {
   fi
 
   # install unofficial packages
-  sudo pacman --sync --noconfirm --needed fcitx5-config-qt-git fcitx5-git fcitx5-gtk-git fcitx5-material-color \
-    fcitx5-pinyin-moegirl-rime fcitx5-qt5-git fcitx5-rime-git nerd-fonts-complete p7zip-zstd-codec \
-    supersm-git visual-studio-code-bin unzip-iconv
+  sudo pacman --sync --noconfirm --needed fcitx5-config-qt-git fcitx5-git \
+    fcitx5-gtk-git fcitx5-material-color fcitx5-pinyin-moegirl-rime fcitx5-qt5-git \
+    fcitx5-rime-git nerd-fonts-complete p7zip-zstd-codec supersm-git \
+    visual-studio-code-bin unzip-iconv
 
   # install zenpower-dkms-git
-  if [[ $(gcc -c -Q -march=native --help=target -o /dev/null | grep march | awk '{print $2}' | head -n1) == znver1 ]]; then
+  if [[ $(gcc -c -Q -march=native --help=target -o /dev/null | grep march | awk \
+    '{print $2}' | head -n1) == znver1 ]]; then
     sudo pacman --sync --noconfirm --needed zenpower-dkms-git
   fi
 
@@ -156,12 +161,13 @@ pacman_unofficial_packages() {
 }
 
 pacman_official_packages() {
-  sudo pacman -Syu --noconfirm --needed alsa-utils autopep8 axel bind-tools chromium cloc cmake dmidecode \
-    exfat-utils flameshot gdb htop jdk-openjdk jq jre-openjdk linux-firmware lldb man mpv ncdu \
-    neofetch neovim net-tools noto-fonts-cjk noto-fonts-emoji noto-fonts-extra \
-    p7zip pacman-contrib pavucontrol pkgfile pkgstats pulseaudio python-pylint screen \
-    screenfetch shellcheck shfmt telegram-desktop tldr tmux tree ttf-opensans unrar \
-    uptimed wget whois youtube-dl zstd networkmanager
+  sudo pacman -Syu --noconfirm --needed alsa-utils autopep8 axel bind-tools chromium \
+    cloc cmake dmidecode exfat-utils flameshot gdb htop jdk-openjdk jq jre-openjdk \
+    linux-firmware lldb man mpv ncdu neofetch neovim net-tools noto-fonts-cjk \
+    noto-fonts-emoji noto-fonts-extra p7zip pacman-contrib pavucontrol pkgfile \
+    pkgstats pulseaudio python-pylint screen screenfetch shellcheck shfmt \
+    telegram-desktop tldr tmux tree ttf-opensans unrar uptimed wget whois youtube-dl \
+    zstd networkmanager
 
   # systemd
   sudo systemctl enable pkgfile-update.timer
@@ -215,10 +221,8 @@ add_konsole_scheme() {
 }
 
 vim_init() {
-  sudo pacman --sync --noconfirm --needed vim-plug-git neovim vim neovim-qt xclip
-  sudo pacman --sync --noconfirm --needed python-language-server python-pynvim
-  sudo pacman --sync --noconfirm --needed npm nodejs-neovim
-  sudo pacman --sync --noconfirm --needed clang
+  sudo pacman --sync --noconfirm --needed vim-plug-git neovim vim neovim-qt xclip \
+    python-language-server python-pynvim npm nodejs-neovim clang
   supersm nvim nodejs
 }
 
@@ -267,6 +271,3 @@ supersm clang
 supersm git
 # makepkg and pacman
 sudo supersm devtools --target /
-# mutt
-#sudo pacman --sync --noconfirm --needed neomutt neovim msmtp offlineimap
-#supersm mutt
