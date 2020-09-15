@@ -241,7 +241,7 @@ desktop_session() {
 }
 
 i3gaps() {
-  sudo pacman --sync --noconfirm --needed i3-gaps i3status-rust-git picom numlockx feh rofi xorg-xrdb sddm
+  sudo pacman --sync --noconfirm --needed i3-gaps i3status-rust picom numlockx feh rofi xorg-xrdb sddm
   sudo systemctl enable sddm
   supersm i3
   xfceterminal_scheme
