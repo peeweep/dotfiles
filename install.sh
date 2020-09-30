@@ -199,25 +199,9 @@ fcitx5_init() {
   supersm fcitx5
 }
 
-omz_init() {
-  sudo mkdir -p /usr/share/fonts/OTF/
-  sudo pacman --sync --noconfirm --needed zsh zsh-autosuggestions oh-my-zsh-git
+zsh_init() {
+  sudo pacman --sync --noconfirm --needed zsh zsh-autosuggestions zsh-history-substring-search zsh-syntax-highlighting
   supersm zsh
-}
-
-sound_panel() {
-  sudo pacman --sync --noconfirm --needed pulseaudio xfce4-pulseaudio-plugin xfce4-panel pavucontrol
-  echo "xfce4 volume panel installed"
-}
-
-xfceterminal_scheme() {
-  sudo pacman --sync --noconfirm --needed xfce4-terminal
-  supersm xfce4-terminal
-}
-
-add_konsole_scheme() {
-  sudo pacman --sync --noconfirm --needed konsole
-  sudo supersm konsole --target /
 }
 
 vim_init() {
@@ -226,25 +210,9 @@ vim_init() {
   supersm nvim nodejs
 }
 
-desktop_session() {
-  case "${XDG_CURRENT_DESKTOP}" in
-  KDE)
-    add_konsole_scheme
-    ;;
-  XFCE)
-    sound_panel
-    xfceterminal_scheme
-    ;;
-  esac
-  omz_init
-  vim_init
-}
-
-i3gaps() {
-  sudo pacman --sync --noconfirm --needed i3-gaps i3status-rust picom numlockx feh rofi xorg-xrdb sddm
-  sudo systemctl enable sddm
-  supersm i3
-  xfceterminal_scheme
+kitty_scheme() {
+  sudo pacman --sync --noconfirm --needed kitty
+  supersm kitty
 }
 
 dotfiles="$HOME/.dotfiles"
@@ -252,7 +220,9 @@ git clone https://github.com/peeweep/dotfiles "${dotfiles}"
 cd "${dotfiles}" || exit
 pacman_init
 fcitx5_init
-desktop_session
+zsh_init
+vim_init
+kitty_scheme
 
 case $1 in
 gnome)
@@ -260,7 +230,9 @@ gnome)
   sudo systemctl enable sddm
   ;;
 *)
-  i3gaps
+  sudo pacman --sync --noconfirm --needed i3-gaps i3status-rust picom numlockx feh rofi xorg-xrdb sddm
+  sudo systemctl enable sddm
+  supersm i3
   ;;
 esac
 

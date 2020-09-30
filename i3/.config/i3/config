@@ -195,7 +195,7 @@ gaps outer 5
 
 # bindsym
 # exec applications
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec kitty
 bindsym $mod+Shift+f exec rofi -show run
 bindsym $mod+Shift+z exec flameshot gui
 # reszie window
