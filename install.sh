@@ -32,7 +32,8 @@ pacman_ck() {
     echo "Server = https://mirrors.bfsu.edu.cn/repo-ck/\$arch"
     echo "Server = http://repo-ck.com/\$arch"
   } | sudo tee -a /etc/pacman.conf
-  sudo pacman-key -r 5EE46C4C && sudo pacman-key --lsign-key 5EE46C4C
+  sudo pacman-key -r 5EE46C4C --keyserver keyserver.ubuntu.com
+  sudo pacman-key --lsign-key 5EE46C4C
   sudo pacman -Syu --noconfirm
 }
 
@@ -98,7 +99,7 @@ linux_ck() {
     ;;
   esac
 
-  sudo pacman -Syu --needed ${group}
+  sudo pacman -Syu --noconfirm --needed ${group}
 }
 
 pacman_unofficial_packages() {
@@ -121,8 +122,8 @@ pacman_unofficial_packages() {
   fi
 
   # install unofficial packages
-  sudo pacman --sync --noconfirm --needed fcitx5-config-qt-git fcitx5-git \
-    fcitx5-gtk-git fcitx5-material-color fcitx5-pinyin-moegirl-rime fcitx5-qt5-git \
+  sudo pacman --sync --noconfirm --needed fcitx5-git fcitx5-gtk-git \
+    fcitx5-material-color fcitx5-pinyin-moegirl-rime fcitx5-qt5-git \
     fcitx5-rime-git nerd-fonts-complete p7zip-zstd-codec supersm-git \
     visual-studio-code-bin unzip-iconv
 
@@ -230,7 +231,7 @@ gnome)
   sudo systemctl enable sddm
   ;;
 *)
-  sudo pacman --sync --noconfirm --needed i3-gaps i3status-rust picom numlockx feh rofi xorg-xrdb sddm
+  sudo pacman --sync --noconfirm --needed i3-gaps i3status-rust numlockx feh rofi xorg-xrdb sddm
   sudo systemctl enable sddm
   supersm i3
   ;;
