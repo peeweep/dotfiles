@@ -195,7 +195,7 @@ gaps outer 5
 
 # bindsym
 # exec applications
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec GLFW_IM_MODULE=ibus kitty
 bindsym $mod+Shift+f exec rofi -show run
 bindsym $mod+Shift+z exec flameshot gui
 # reszie window
@@ -204,6 +204,5 @@ bindsym $mod+Ctrl+Up resize grow height 1 px or 1 ppt
 bindsym $mod+Ctrl+Down resize shrink height 1 px or 1 ppt
 bindsym $mod+Ctrl+Left resize grow width 1 px or 1 ppt
 
-exec_always --no-startup-id "compton -b"
 exec_always --no-startup-id feh --bg-scale ~/Pictures/bg.jpg
 exec_always --no-startup-id numlockx on
