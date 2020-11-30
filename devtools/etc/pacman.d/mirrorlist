@@ -3,11 +3,17 @@
 ################################################################################
 
 # With:       reflector --verbose --country CHINA -l 200 -p https --sort rate --save /etc/pacman.d/mirrorlist
-# When:       2020-03-03 12:27:39 UTC
+# When:       2020-10-14 02:07:24 UTC
 # From:       https://www.archlinux.org/mirrors/status/json/
-# Retrieved:  2020-03-03 12:27:38 UTC
-# Last Check: 2020-03-03 12:23:51 UTC
+# Retrieved:  2020-10-14 02:07:23 UTC
+# Last Check: 2020-10-14 00:51:16 UTC
 
-Server = https://mirrors.bfsu.edu.cn/archlinux/$repo/os/$arch
 Server = https://mirrors.sjtug.sjtu.edu.cn/archlinux/$repo/os/$arch
-Server = https://jpn.mirror.pkgbuild.com/$repo/os/$arch
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
+Server = https://mirrors.bfsu.edu.cn/archlinux/$repo/os/$arch
+Server = https://mirrors.neusoft.edu.cn/archlinux/$repo/os/$arch
+Server = https://mirrors.dgut.edu.cn/archlinux/$repo/os/$arch
+Server = https://mirrors.nju.edu.cn/archlinux/$repo/os/$arch
+Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
+Server = https://mirrors.cqu.edu.cn/archlinux/$repo/os/$arch
+Server = https://mirror.pkgbuild.com/$repo/os/$arch
