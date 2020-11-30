@@ -1,9 +1,9 @@
 # offlineimap
 set folder = "~/.mutt/mailboxes"
 set spoolfile = +INBOX
-set record = +"Sent Items"
-set trash = +"Deleted Items"
-set postponed = +Drafts
+set record = +Sent
+set trash = +Trash
+set postponed = +Draft
 
 #######################################
 #
@@ -14,14 +14,8 @@ set postponed = +Drafts
 ########################################
 
 mailboxes +"Archive" \
-+"Deleted Items" \
-+"Drafts" \
++"Draft" \
 +"INBOX" \
-+"Junk Email" \
-+"List" \
-+"List.arch-announce" \
-+"List.arch-projects" \
-+"List.aur-requests" \
-+"nvchecker" \
-+"Sent Items" \
-
++"Junk" \
++"Sent" \
++"Trash"

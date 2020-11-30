@@ -35,7 +35,7 @@ remoteusereval = decrypt("user")
 # GPG Encrypt:
 # for i in $(ls ~/.mutt/offlineimap_* | grep -Ev ".gpg"); do; gpg -r your_fpri -e "${i}"; done
 
-folderfilter = lambda folder: not re.search('(Calendar.*|Contacts|Conversation\ History|Journal|Notes|Outbox|Tasks)', folder)
+# folderfilter = lambda folder: not re.search('(Gerrit|PMS)', folder)
 
 createfolders = False
 realdelete = yes
