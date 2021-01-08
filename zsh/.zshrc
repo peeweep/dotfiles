@@ -35,6 +35,7 @@ alias farsee="curl -F \"c=@-\" \"https://fars.ee/\""
 alias setgitproxy="git config --global http.proxy 'socks5://127.0.0.1:7891';git config --global https.proxy 'socks5://127.0.0.1:7891'"
 alias unsetgitproxy="git config --global --unset http.proxy;git config --global --unset https.proxy"
 alias setworkmail="git config user.name zhangjinqiang; git config user.email zhangjinqiang@uniontech.com"
+alias grep='grep --color=auto'
 
 # case insensitive on
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
