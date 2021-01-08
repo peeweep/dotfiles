@@ -198,6 +198,7 @@ gaps outer 5
 bindsym $mod+Return exec GLFW_IM_MODULE=ibus kitty
 bindsym $mod+Shift+f exec rofi -show run
 bindsym $mod+Shift+z exec flameshot gui
+bindsym $mod+Shift+a exec flameshot full -c
 # reszie window
 bindsym $mod+Ctrl+Right resize shrink width 1 px or 1 ppt
 bindsym $mod+Ctrl+Up resize grow height 1 px or 1 ppt
