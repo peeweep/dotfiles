@@ -5,7 +5,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 " clang-foramt
-Plug 'rhysd/vim-clang-format'
+" Plug 'rhysd/vim-clang-format'
 " colorscheme
 Plug 'vim-airline/vim-airline'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
@@ -15,16 +15,19 @@ Plug 'voldikss/vim-translator'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " history
 Plug 'mhinz/vim-startify'
+" tagbar
+Plug 'preservim/tagbar'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 call plug#end()
 
 " nerdtree
 let g:NERDTreeShowHidden=1
 let g:NERDTreeIgnore=['\.DS_Store$', '\.git$']
 
-" clang-format
-let g:clang_format#command = 'clang-format'
-autocmd FileType c ClangFormatAutoEnable
-let g:clang_format#detect_style_file = 1
+"  " clang-format
+"  let g:clang_format#command = 'clang-format'
+"  autocmd FileType c ClangFormatAutoEnable
+"  let g:clang_format#detect_style_file = 1
 
 " colorscheme
 colorscheme challenger_deep
@@ -63,6 +66,9 @@ nnoremap <space>e :NERDTree<cr>
 
 " Formatting selected json.
 vnoremap <space>fj :CocCommand prettier.formatFile<cr>
+
+" tagbar
+nmap <F8> :TagbarToggle<CR>
 
 " vim-translator
 " Echo translation in the cmdline
