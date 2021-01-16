@@ -216,6 +216,11 @@ kitty_scheme() {
   supersm kitty
 }
 
+pbuilder_init() {
+  sudo pacman --sync --noconfirm --needed pbuilder libeatmydata pigz qemu-debootstrap
+  sudo supersm pbuilder -T /
+}
+
 dotfiles="$HOME/.dotfiles"
 git clone https://github.com/peeweep/dotfiles "${dotfiles}"
 cd "${dotfiles}" || exit

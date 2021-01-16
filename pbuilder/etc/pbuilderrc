@@ -1,0 +1,10 @@
+DEBOOTSTRAPOPTS=(
+    '--variant=buildd'
+    '--no-check-gpg'
+    '--include=vim,deepin-keyring,less,sudo,wget,curl,pbuilder,perl-openssl-defaults'
+    )
+EATMYDATA=yes
+DEBOOTSTRAP="qemu-debootstrap"
+COMPRESSPROG="pigz"
+COMPONENTS="main"
+HOOKDIR="/var/cache/pbuilder/hooks"
