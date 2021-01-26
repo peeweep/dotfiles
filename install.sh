@@ -124,7 +124,7 @@ pacman_unofficial_packages() {
   # install unofficial packages
   sudo pacman --sync --noconfirm --needed fcitx5-git fcitx5-gtk-git \
     fcitx5-material-color fcitx5-pinyin-moegirl-rime fcitx5-qt5-git \
-    fcitx5-rime-git nerd-fonts-complete p7zip-zstd-codec supersm-git \
+    fcitx5-rime-git firefox-esr68 nerd-fonts-complete supersm-git \
     visual-studio-code-bin unzip-iconv
 
   # install zenpower-dkms-git
@@ -162,13 +162,11 @@ pacman_unofficial_packages() {
 }
 
 pacman_official_packages() {
-  sudo pacman -Syu --noconfirm --needed alsa-utils autopep8 axel bind-tools chromium \
-    cloc cmake dmidecode exfat-utils flameshot gdb htop jdk-openjdk jq jre-openjdk \
-    linux-firmware lldb man mpv ncdu neofetch neovim net-tools noto-fonts-cjk \
-    noto-fonts-emoji noto-fonts-extra p7zip pacman-contrib pavucontrol pkgfile \
-    pkgstats pulseaudio python-pylint screen screenfetch shellcheck shfmt \
-    telegram-desktop tldr tmux tree ttf-opensans unrar uptimed wget whois youtube-dl \
-    zstd networkmanager
+  sudo pacman -Syu --noconfirm --needed alsa-utils autopep8 bind-tools dmidecode \
+    flameshot htop linux-firmware man mpv neovim networkmanager net-tools \
+    noto-fonts-cjk noto-fonts-emoji noto-fonts-extra p7zip pacman-contrib \
+    pavucontrol pkgfile pulseaudio python-pylint shellcheck shfmt telegram-desktop \
+    tmux ttf-opensans unrar uptimed wget whois zstd
 
   # systemd
   sudo systemctl enable pkgfile-update.timer
