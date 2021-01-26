@@ -36,6 +36,7 @@ alias setgitproxy="git config --global http.proxy 'socks5://127.0.0.1:7891';git 
 alias unsetgitproxy="git config --global --unset http.proxy;git config --global --unset https.proxy"
 alias setworkmail="git config user.name zhangjinqiang; git config user.email zhangjinqiang@uniontech.com"
 alias grep='grep --color=auto'
+alias ll='ls -lh'
 
 # case insensitive on
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
