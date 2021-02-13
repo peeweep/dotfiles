@@ -3,7 +3,6 @@ DEBOOTSTRAPOPTS=(
     '--no-check-gpg'
     '--include=vim,deepin-keyring,less,sudo,wget,curl,pbuilder,perl-openssl-defaults'
     )
-EATMYDATA=yes
 DEBOOTSTRAP="qemu-debootstrap"
 COMPRESSPROG="pigz"
 COMPONENTS="main"
