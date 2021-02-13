@@ -165,8 +165,13 @@ pacman_official_packages() {
   sudo pacman -Syu --noconfirm --needed alsa-utils autopep8 bind-tools dmidecode \
     flameshot htop linux-firmware man mpv neovim networkmanager net-tools \
     noto-fonts-cjk noto-fonts-emoji noto-fonts-extra p7zip pacman-contrib \
-    pavucontrol pkgfile pulseaudio python-pylint shellcheck shfmt telegram-desktop \
+    pavucontrol pkgfile pulseaudio python-pylint shfmt telegram-desktop usbutils \
     tmux ttf-opensans unrar uptimed wget whois zstd
+
+  # bluetooth
+  if [[ -n $(lsusb | grep -i Bluetooth) ]] ; then
+    sudo pacman --sync --noconfirm --needed bluez-utils pulseaudio-bluetooth blueman
+  fi
 
   # systemd
   sudo systemctl enable pkgfile-update.timer
