@@ -163,13 +163,13 @@ pacman_unofficial_packages() {
 
 pacman_official_packages() {
   sudo pacman -Syu --noconfirm --needed alsa-utils autopep8 bind-tools dmidecode \
-    flameshot htop linux-firmware man mpv neovim networkmanager net-tools \
+    flameshot htop linux-firmware lshw man mpv neovim networkmanager net-tools \
     noto-fonts-cjk noto-fonts-emoji noto-fonts-extra p7zip pacman-contrib \
-    pavucontrol pkgfile pulseaudio python-pylint shfmt telegram-desktop usbutils \
+    pavucontrol pkgfile pulseaudio python-pylint shfmt telegram-desktop \
     tmux ttf-opensans unrar uptimed wget whois zstd
 
   # bluetooth
-  if [[ -n $(lsusb | grep -i Bluetooth) ]] ; then
+  if [[ -n $(sudo lshw | grep -i Bluetooth) ]]; then
     sudo pacman --sync --noconfirm --needed bluez-utils pulseaudio-bluetooth blueman
   fi
 
