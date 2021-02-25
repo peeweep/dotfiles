@@ -171,6 +171,7 @@ pacman_official_packages() {
   # bluetooth
   if [[ -n $(sudo lshw | grep -i Bluetooth) ]]; then
     sudo pacman --sync --noconfirm --needed bluez-utils pulseaudio-bluetooth blueman
+    sudo systemctl enable bluetooth.service
   fi
 
   # systemd
