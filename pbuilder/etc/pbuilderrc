@@ -1,8 +1,11 @@
 DEBOOTSTRAPOPTS=(
     '--variant=buildd'
     '--no-check-gpg'
-    '--include=vim,deepin-keyring,less,sudo,wget,curl,pbuilder,perl-openssl-defaults'
+    # "--include=deepin-keyring,vim,less,sudo,git,pbuilder,devscripts,perl-openssl-defaults,iproute2,debhelper,quilt"
+    "--include=vim,less,sudo,git,pbuilder,devscripts,perl-openssl-defaults,iproute2,debhelper,quilt"
     )
+#MIRRORSITE=http://pools.uniontech.com/desktop-professional
+MIRRORSITE=http://mirrors.sjtug.sjtu.edu.cn/debian/
 DEBOOTSTRAP="qemu-debootstrap"
 COMPRESSPROG="pigz"
 COMPONENTS="main"
