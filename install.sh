@@ -205,7 +205,7 @@ fcitx5_init() {
 }
 
 zsh_init() {
-  sudo pacman --sync --noconfirm --needed zsh zsh-autosuggestions zsh-history-substring-search zsh-syntax-highlighting
+  sudo pacman --sync --noconfirm --needed zsh
   supersm zsh
 }
 
