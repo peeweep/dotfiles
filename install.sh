@@ -127,12 +127,6 @@ pacman_unofficial_packages() {
     fcitx5-rime-git firefox-esr68 nerd-fonts-complete supersm-git \
     visual-studio-code-bin unzip-iconv
 
-  # install zenpower-dkms-git
-  if [[ $(gcc -c -Q -march=native --help=target -o /dev/null | grep march | awk \
-    '{print $2}' | head -n1) == znver1 ]]; then
-    sudo pacman --sync --noconfirm --needed zenpower-dkms-git
-  fi
-
   # install gpu driver
   gpu_model=$(lspci -mm | awk -F '\"|\" \"|\\(' '/"Display|"3D|"VGA/')
   if echo "${gpu_model}" | grep NVIDIA; then
