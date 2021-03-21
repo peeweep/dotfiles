@@ -15,7 +15,8 @@ localfolders = ~/.mutt/mailboxes/
 
 [Repository remote]
 type = IMAP
-ssl = yes
+startssl = yes
+ssl = no
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 
 # set value to ~/.mutt/offlineimap_*
@@ -35,7 +36,7 @@ remoteusereval = decrypt("user")
 # GPG Encrypt:
 # for i in $(ls ~/.mutt/offlineimap_* | grep -Ev ".gpg"); do; gpg -r your_fpri -e "${i}"; done
 
-# folderfilter = lambda folder: not re.search('(Gerrit|PMS)', folder)
+folderfilter = lambda folder: not re.search('(github)', folder)
 
 createfolders = False
 realdelete = yes
