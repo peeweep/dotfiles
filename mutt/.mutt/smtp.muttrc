@@ -10,12 +10,11 @@
 source "gpg -dq ~/.mutt/mutt_pass.gpg |"
 
 # SMTP
-set sendmail ="/usr/bin/msmtp"
 set realname = $my_user
 set from = $my_addr
 set use_from = yes
-set smtp_url = smtps://$my_addr:$my_pass@$hostname:465
+set smtp_url = "smtps://$my_addr@$hostname:465"
+set smtp_pass = $my_pass
+set ssl_starttls = no
 set ssl_force_tls = yes
 set smtp_authenticators = "login"
-# set ssl_starttls = no
-
