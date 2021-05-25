@@ -31,6 +31,7 @@ source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 # alias
 alias vim=nvim
 alias suod=sudo
+alias sduo=sudo
 alias farsee="curl -F \"c=@-\" \"https://fars.ee/\""
 alias setgitproxy="git config --global http.proxy 'socks5://127.0.0.1:7891';git config --global https.proxy 'socks5://127.0.0.1:7891'"
 alias unsetgitproxy="git config --global --unset http.proxy;git config --global --unset https.proxy"
