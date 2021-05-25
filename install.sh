@@ -124,7 +124,7 @@ pacman_unofficial_packages() {
   # install unofficial packages
   sudo pacman --sync --noconfirm --needed fcitx5-git fcitx5-gtk-git \
     fcitx5-material-color fcitx5-pinyin-moegirl-rime fcitx5-qt5-git \
-    fcitx5-rime-git firefox-esr68 nerd-fonts-complete supersm-git \
+    fcitx5-rime-git firefox-nightly-en-us nerd-fonts-complete supersm-git \
     visual-studio-code-bin unzip-iconv
 
   # install gpu driver
