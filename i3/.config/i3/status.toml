@@ -50,14 +50,13 @@ buttons = ["play", "next"]
 [[block]]
 block = "weather"
 format = "{weather} ({location}) {temp}°"
-service = { name = "openweathermap", api_key = "42a1771a0b787bf12e734ada0cfc80cb", city_id = "1796236", units = "metric" }
+service = { name = "openweathermap", api_key = "42a1771a0b787bf12e734ada0cfc80cb", city_id = "1791247", units = "metric" }
 interval = 600
 
 [[block]]
 block = "memory"
-format_mem = "{Mum}MB/{MTm}MB({Mup}%)"
-icons = true
-interval = 5
+format_mem = "total:{mem_total}, used:{mem_total_used}"
+clickable = false
 
 [[block]]
 block = "sound"
