@@ -2,9 +2,15 @@
   "suggest.noselect": false,
   "python.formatting.provider": "autopep8",
   "javascript.format.enabled": true,
-  "coc.preferences.formatOnSaveFiletypes": ["python","js","json"],
+  "coc.preferences.formatOnSaveFiletypes": ["python", "js", "json", "go"],
   "coc.preferences.extensionUpdateCheck": "daily",
   "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod"],
+      "disableWorkspaceFolders": true,
+      "filetypes": ["go"]
+    },
     "clangd": {
       "command": "clangd",
       "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
