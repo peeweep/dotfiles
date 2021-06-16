@@ -61,6 +61,10 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
+
+" gopls add missing import
+autocmd BufWritePre *.go silent! call CocAction('runCommand', 'editor.action.organizeImport')
+
 " NERDTree
 nnoremap <space>e :NERDTree<cr>
 
