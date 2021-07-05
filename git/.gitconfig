@@ -7,9 +7,11 @@
 	editor = nvim
 	excludesfile = ~/.gitignore
 [alias]
-	commitutc = !git commit --date=\"$(date --utc +%Y-%m-%dT%H:%M:%S%z)\"
+	commitutc = !git commit --date=\"$(date -u +%Y-%m-%dT%H:%M:%S%z)\"
 [push]
 	followTags = true
 	default = current
 [pull]
 	ff = only
+[gitreview]
+	remote = origin
