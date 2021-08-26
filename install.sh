@@ -19,7 +19,7 @@ pacman_peeweep() {
     echo "Server = https://peeweep.duckdns.org/archlinux/x86_64"
   } | sudo tee -a /etc/pacman.conf
   sudo pacman -Syu --noconfirm --needed curl
-  curl https://peeweep.de/pubring.gpg | sudo pacman-key -a -
+  curl https://daydream.ac.cn/pubring.gpg | sudo pacman-key -a -
   sudo pacman-key --lsign-key A4A9C04411BE1F71
   sudo pacman -Syu --noconfirm
   echo "[✔]peeweep repo installed"
