@@ -160,7 +160,7 @@ pacman_official_packages() {
     flameshot htop linux-firmware lshw man mpv neovim networkmanager net-tools \
     noto-fonts-cjk noto-fonts-emoji noto-fonts-extra p7zip pacman-contrib \
     pavucontrol pkgfile pulseaudio python-pylint ripgrep shfmt telegram-desktop \
-    tmux ttf-opensans unrar uptimed wget whois zstd
+    tmux ttf-opensans unrar uptimed wget whois zstd gist freerdp
 
   # bluetooth
   if [[ -n $(sudo lshw | grep -i Bluetooth) ]]; then
@@ -205,7 +205,7 @@ zsh_init() {
 
 vim_init() {
   sudo pacman --sync --noconfirm --needed vim-plug-git neovim vim neovim-qt xclip \
-    python-language-server python-pynvim npm nodejs-neovim clang
+    python-language-server python-pynvim npm nodejs-neovim clang gopls
   supersm nvim nodejs
 }
 
