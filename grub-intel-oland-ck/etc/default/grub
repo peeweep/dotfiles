@@ -4,7 +4,6 @@ GRUB_DEFAULT=0
 GRUB_TIMEOUT=5
 GRUB_DISTRIBUTOR="Arch"
 #GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet"
-#GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 radeon.si_support=0 amdgpu.si_support=1 systemd.unified_cgroup_hierarchy=0 intel_iommu=on"
 GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 radeon.si_support=0 amdgpu.si_support=1 systemd.unified_cgroup_hierarchy=0 intel_iommu=on"
 GRUB_CMDLINE_LINUX=""
 
