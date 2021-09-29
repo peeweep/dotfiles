@@ -204,7 +204,7 @@ zsh_init() {
 }
 
 vim_init() {
-  sudo pacman --sync --noconfirm --needed vim-plug-git neovim vim neovim-qt xclip \
+  sudo pacman --sync --noconfirm --needed neovim vim neovim-qt xclip \
     python-language-server python-pynvim npm nodejs-neovim clang gopls
   supersm nvim nodejs
 }
