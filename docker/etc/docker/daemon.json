@@ -1,3 +1,7 @@
 {
-  "registry-mirrors": ["https://docker.mirrors.sjtug.sjtu.edu.cn"]
+  "registry-mirrors": [
+    "https://docker.mirrors.sjtug.sjtu.edu.cn",
+    "https://registry.cn-hangzhou.aliyuncs.com",
+    "https://hub-mirror.c.163.com"
+  ]
 }
