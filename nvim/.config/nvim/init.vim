@@ -54,8 +54,8 @@ set shiftwidth=2
 set nobackup
 set nowritebackup
 set showtabline=2
-set ff=unix
 set modifiable
+set ff=unix
 set encoding=utf-8
 set fencs=utf-8,ucs-bom,gb18030,gbkgb2312,shift-jis,cp936
 set termencoding=utf-8
