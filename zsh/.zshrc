@@ -61,3 +61,10 @@ for dump in ~/.zcompdump(N.mh+24); do
 done
 compinit -C
 
+# macos
+if [ -f /opt/homebrew/bin/brew ]; then
+  alias brew='arch -arm64 /opt/homebrew/bin/brew'
+fi
+if [ -d /opt/homebrew/opt/openjdk/bin ]; then
+  export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+fi
