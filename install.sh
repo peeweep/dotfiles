@@ -38,68 +38,7 @@ pacman_ck() {
 }
 
 linux_ck() {
-  march=$(gcc -c -Q -march=native --help=target -o /dev/null | grep march | awk '{print $2}' | head -n1)
-  case "${march}" in
-  bonnell)
-    group="ck-atom"
-    ;;
-  silvermont)
-    group="ck-silvermont"
-    ;;
-  core2)
-    group="ck-core2"
-    ;;
-  nehalem)
-    group="ck-nehalem"
-    ;;
-  sandybridge)
-    group="ck-sandybridge"
-    ;;
-  ivybridge)
-    group="ck-ivybridge"
-    ;;
-  haswell)
-    group="ck-haswell"
-    ;;
-  broadwell)
-    group="ck-broadwell"
-    ;;
-  skylake)
-    group="ck-skylake"
-    ;;
-  pentium4 | prescott | nocona)
-    group="ck-p4"
-    ;;
-  pentm | pentium-m)
-    group="ck-pentm"
-    ;;
-  athlon | athlon-4 | athlon-tbird | athlon-mp | k8-sse3)
-    group="ck-kx"
-    ;;
-  amdfam10)
-    group="ck-k10"
-    ;;
-  btver1)
-    group="ck-bobcat"
-    ;;
-  bdver1)
-    group="ck-bulldozer"
-    ;;
-  bdver2)
-    group="ck-piledriver"
-    ;;
-  znver1)
-    group="ck-zen"
-    ;;
-  znver2)
-    group="ck-zen2"
-    ;;
-  *)
-    group="ck-generic"
-    ;;
-  esac
-
-  sudo pacman -Syu --noconfirm --needed ${group}
+  sudo pacman -Syu --noconfirm --needed $(/lib/ld-linux-x86-64.so.2 --help | grep supported | awk '{print $1}' | sort -n | tail -1 | sed 's|x86-64|ck-generic|')
 }
 
 pacman_unofficial_packages() {
@@ -205,7 +144,8 @@ zsh_init() {
 
 vim_init() {
   sudo pacman --sync --noconfirm --needed neovim vim neovim-qt xclip \
-    python-language-server python-pynvim npm nodejs-neovim clang gopls
+    python-language-server python-pynvim npm nodejs-neovim clang gopls \
+    rust-analyzer rust
   supersm nvim nodejs
 }
 
