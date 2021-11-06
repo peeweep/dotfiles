@@ -6,6 +6,7 @@
 [core]
 	editor = nvim
 	excludesfile = ~/.gitignore
+	mergeoptions = --no-edit
 [alias]
 	commitutc = !git commit --date=\"$(date -u +%Y-%m-%dT%H:%M:%S%z)\"
 [push]
