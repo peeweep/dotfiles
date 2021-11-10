@@ -5,6 +5,10 @@
   "coc.preferences.formatOnSaveFiletypes": ["python", "js", "json", "go"],
   "coc.preferences.extensionUpdateCheck": "daily",
   "languageserver": {
+    "latex": {
+      "command": "/usr/bin/texlab",
+      "filetypes": ["tex", "bib", "plaintex", "context"]
+    },
     "rust": {
       "command": "rust-analyzer",
       "filetypes": ["rust"],

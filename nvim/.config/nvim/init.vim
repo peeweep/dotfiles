@@ -18,6 +18,9 @@ Plug 'mhinz/vim-startify'
 " tagbar
 Plug 'preservim/tagbar'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+" vimtex
+Plug 'lervag/vimtex'
+" Plug 'github/copilot.vim'
 call plug#end()
 
 " nerdtree
@@ -73,6 +76,35 @@ vnoremap <space>fj :CocCommand prettier.formatFile<cr>
 
 " tagbar
 nmap <F8> :TagbarToggle<CR>
+
+let g:tagbar_type_go = {
+	\ 'ctagstype' : 'go',
+	\ 'kinds'     : [
+		\ 'p:package',
+		\ 'i:imports:1',
+		\ 'c:constants',
+		\ 'v:variables',
+		\ 't:types',
+		\ 'n:interfaces',
+		\ 'w:fields',
+		\ 'e:embedded',
+		\ 'm:methods',
+		\ 'r:constructor',
+		\ 'f:functions'
+	\ ],
+	\ 'sro' : '.',
+	\ 'kind2scope' : {
+		\ 't' : 'ctype',
+		\ 'n' : 'ntype'
+	\ },
+	\ 'scope2kind' : {
+		\ 'ctype' : 't',
+		\ 'ntype' : 'n'
+	\ },
+	\ 'ctagsbin'  : 'gotags',
+	\ 'ctagsargs' : '-sort -silent'
+\ }
+
 
 " vim-translator
 " Echo translation in the cmdline
