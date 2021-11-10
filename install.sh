@@ -145,8 +145,13 @@ zsh_init() {
 vim_init() {
   sudo pacman --sync --noconfirm --needed neovim vim neovim-qt xclip \
     python-language-server python-pynvim npm nodejs-neovim clang gopls \
-    rust-analyzer rust
+    rust-analyzer rust gotags
   supersm nvim nodejs
+}
+
+latex_init(){
+  sudo pacman --sync --noconfirm --needed texlab texlive-most texlive-lang
+  # xelatex example.tex
 }
 
 kitty_scheme() {
