@@ -37,12 +37,6 @@ return {
             key = "RightArrow",
             mods = "CTRL",
             action = wezterm.action {SendString = "\x1b\x66"}
-        }, {
-            -- copy_on_select
-            -- https://wezfurlong.org/wezterm/config/keys.html#default-shortcut--key-binding-assignments
-            key = "v",
-            mods = "SHIFT|CTRL",
-            action = wezterm.action {PasteFrom = "PrimarySelection"}
         }
     },
     mouse_bindings = {
