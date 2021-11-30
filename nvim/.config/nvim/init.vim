@@ -20,6 +20,7 @@ Plug 'preservim/tagbar'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 " vimtex
 Plug 'lervag/vimtex'
+" Plug 'fedorenchik/gtags.vim'
 " Plug 'github/copilot.vim'
 call plug#end()
 
@@ -58,6 +59,7 @@ set fencs=utf-8,ucs-bom,gb18030,gbkgb2312,shift-jis,cp936
 set termencoding=utf-8
 set fileencoding=utf-8
 set whichwrap+=<,>,h,l
+set nofixendofline
 
 " jump to the last position when reopening a file
 if has("autocmd")
