@@ -24,6 +24,9 @@ setopt inc_append_history
 # directory
 export PS1="[%~]$ "
 
+# repo
+export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo'
+
 # load plugins
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
