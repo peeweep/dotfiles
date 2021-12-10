@@ -1,4 +1,4 @@
-BasedOnStyle: Google
+BasedOnStyle: LLVM
 PointerAlignment: Left
 TabWidth: 2
 AlignConsecutiveAssignments: true
