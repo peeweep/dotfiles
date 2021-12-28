@@ -1,12 +1,15 @@
 DEBOOTSTRAPOPTS=(
-    '--variant=buildd'
+    '--variant=minbase'
     '--no-check-gpg'
     # "--include=deepin-keyring,vim,less,sudo,git,pbuilder,devscripts,perl-openssl-defaults,iproute2,debhelper,quilt"
-    "--include=vim,less,sudo,git,pbuilder,devscripts,perl-openssl-defaults,iproute2,debhelper,quilt"
+    # "--include=vim,less,sudo,git,pbuilder,devscripts,perl-openssl-defaults,iproute2,debhelper,quilt"
+    "--include=deepin-keyring,ca-certificates"
     )
-#MIRRORSITE=http://pools.uniontech.com/desktop-professional
-MIRRORSITE=http://mirrors.sjtug.sjtu.edu.cn/debian/
+MIRRORSITE=https://community-packages.deepin.com/deepin
 DEBOOTSTRAP="qemu-debootstrap"
+APTCACHE=""
+APTCACHEHARDLINK=no
 COMPRESSPROG="pigz"
-COMPONENTS="main"
+COMPONENTS="main contrib non-free"
 HOOKDIR="/var/cache/pbuilder/hooks"
+AUTOCLEANAPTCACHE=yes
