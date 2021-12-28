@@ -29,7 +29,7 @@
     },
     "python": {
       "command": "python3",
-      "args": ["-mpyls", "-vv", "--log-file", "/tmp/lsp_python.log"],
+      "args": ["-mpylsp", "-vv", "--log-file", "/tmp/lsp_python.log"],
       "trace.server": "verbose",
       "filetypes": ["python"],
       "settings": {

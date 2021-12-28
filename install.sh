@@ -144,7 +144,7 @@ zsh_init() {
 
 vim_init() {
   sudo pacman --sync --noconfirm --needed neovim vim neovim-qt xclip \
-    python-language-server python-pynvim npm nodejs-neovim clang gopls \
+    python-lsp-server python-pynvim npm nodejs-neovim clang gopls \
     rust-analyzer rust gotags
   supersm nvim nodejs
 }
