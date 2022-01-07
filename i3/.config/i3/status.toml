@@ -3,45 +3,45 @@ theme = "slick"
 [icons]
 name = "awesome"
 
-[icons.overrides]
-
-# Battery
-bat                = "  "
-bat_full           = "  "
-bat_charging       = "  "
-bat_discharging    = "  "
-bat_half           = "  "
-bat_quarter        = "  "
-bat_three_quarters = "  "
-
-# Backlight
-backlight_full     = "  "
-backlight_partial1 = "  "
-backlight_partial2 = "  "
-backlight_partial3 = "  "
-backlight_empty    = "  "
-
-# Network
-net_up       = "  "
-net_down     = "  "
-net_wired    = "  "
-net_wireless = " 泌 "
-
-# Weather
-weather_sun     = " 滛 "
-weather_snow    = " 流 "
-weather_thunder = " 朗 "
-weather_clouds  = " 摒 "
-weather_rain    = " 殺 "
-weather_default = " 摒 "
-
-# Memory
-memory_mem  = " 勒 "
-memory_swap = " 易 "
-
-xrandr = "  "
-
-time = "  "
+# [icons.overrides]
+# 
+# # Battery
+# bat                = "  "
+# bat_full           = "  "
+# bat_charging       = "  "
+# bat_discharging    = "  "
+# bat_half           = "  "
+# bat_quarter        = "  "
+# bat_three_quarters = "  "
+# 
+# # Backlight
+# backlight_full     = "  "
+# backlight_partial1 = "  "
+# backlight_partial2 = "  "
+# backlight_partial3 = "  "
+# backlight_empty    = "  "
+# 
+# # Network
+# net_up       = "  "
+# net_down     = "  "
+# net_wired    = "  "
+# net_wireless = " 泌 "
+# 
+# # Weather
+# weather_sun     = " 滛 "
+# weather_snow    = " 流 "
+# weather_thunder = " 朗 "
+# weather_clouds  = " 摒 "
+# weather_rain    = " 殺 "
+# weather_default = " 摒 "
+# 
+# # Memory
+# memory_mem  = " 勒 "
+# memory_swap = " 易 "
+# 
+# xrandr = "  "
+# 
+# time = "  "
 
 [[block]]
 block = "music"
@@ -58,9 +58,9 @@ block = "memory"
 format_mem = "total:{mem_total}, used:{mem_total_used}"
 clickable = false
 
-[[block]]
-block = "sound"
-driver = "auto"
+# [[block]]
+# block = "sound"
+# driver = "auto"
 
 [[block]]
 block = "time"

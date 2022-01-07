@@ -177,8 +177,8 @@ bindsym $mod+r mode "resize"
 bar {
         font pango:DejaVuSansMono Nerd Font Book 10 
         position top
-        status_command i3status-rs ~/.config/i3/status.toml
-        # status_command i3status
+        # status_command i3status-rs ~/.config/i3/status.toml
+        status_command i3status
         # tray_output none
         colors {
                 background #424242
