@@ -24,6 +24,9 @@ setopt inc_append_history
 # directory
 export PS1="[%~]$ "
 
+# kitty tab
+precmd () {print -Pn "\e]0;%~\a"}
+
 # repo
 export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo'
 
