@@ -18,10 +18,13 @@ Plug 'mhinz/vim-startify'
 " tagbar
 Plug 'preservim/tagbar'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+" insert
+Plug 'lfilho/cosco.vim'
 " vimtex
-Plug 'lervag/vimtex'
+" Plug 'lervag/vimtex'
 " Plug 'fedorenchik/gtags.vim'
 " Plug 'github/copilot.vim'
+Plug 'pechorin/any-jump.vim'
 call plug#end()
 
 " nerdtree
@@ -41,6 +44,10 @@ endif
 
 " full file path
 let g:airline_section_c='%F'
+
+" insert ;
+autocmd FileType javascript,css,YOUR_LANG nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
+autocmd FileType javascript,css,YOUR_LANG imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
 
 " vim
 set number
@@ -118,6 +125,20 @@ vmap <silent> <Leader>w <Plug>TranslateWV
 " Replace the text with translation
 nmap <silent> <Leader>r <Plug>TranslateR
 vmap <silent> <Leader>r <Plug>TranslateRV
+
+" any-jump
+" Normal mode: Jump to definition under cursor
+nnoremap <leader>j :AnyJump<CR>
+
+" Visual mode: jump to selected text in visual mode
+xnoremap <leader>j :AnyJumpVisual<CR>
+
+" Normal mode: open previous opened file (after jump)
+nnoremap <leader>ab :AnyJumpBack<CR>
+
+" Normal mode: open last closed search window again
+nnoremap <leader>al :AnyJumpLastResults<CR>
+
 
 " yank and paste
 nnoremap <leader>p "+P<cr>
