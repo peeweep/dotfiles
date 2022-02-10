@@ -44,6 +44,8 @@ alias unsetgitproxy="git config --global --unset http.proxy;git config --global 
 alias setworkmail="git config user.name zhangjinqiang; git config user.email zhangjinqiang@uniontech.com"
 alias grep='grep --color=auto'
 alias ll='ls -lh'
+alias gomodvendor="go mod verify && go mod tidy && go mod vendor"
+alias history="history 1"
 
 # case insensitive on
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
