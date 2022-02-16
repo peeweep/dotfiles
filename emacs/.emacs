@@ -13,18 +13,11 @@
   (package-install 'use-package))
 
 (require 'use-package)
-(use-package rime
-  :ensure t
-  :custom
-  (default-input-method "rime"))
-
-(use-package dracula-theme
-  :init (load-theme 'dracula t)
-  ;; Dracula-theme
-  ;; Jazz-theme
-  ;; Ample-theme
-  ;; Junio
-  :ensure t)
+(if (eq system-type 'gnu/linux)
+    (use-package rime
+      :ensure t
+      :custom
+      (default-input-method "rime")))
 
 ;; The following lines are always needed. Choose your own keys.
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
