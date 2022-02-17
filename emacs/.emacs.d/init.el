@@ -2,6 +2,7 @@
 (setq package-archives
       '(("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
         ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+        ("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
         ))
 ;;; Init Packages
 (package-initialize)
@@ -18,11 +19,9 @@
       :ensure t
       :custom
       (default-input-method "rime")))
-
-;; The following lines are always needed. Choose your own keys.
-(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
-(add-hook 'org-mode-hook 'turn-on-font-lock) ; not needed when global-font-lock-mode is on
-
+(use-package org
+  :mode (("\\.org\\" . org-mode))
+  :ensure t)
 
 ;; The following lines are automated added by use-package.
 (custom-set-variables
@@ -30,7 +29,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages '(use-package)))
+ '(package-selected-packages '(org-plus-contrib use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
