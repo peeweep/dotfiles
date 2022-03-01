@@ -18,3 +18,5 @@
 	remote = origin
 [color]
 	ui = auto
+[remote "origin"]
+	prune = true
