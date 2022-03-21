@@ -33,6 +33,9 @@ export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo'
 # load plugins
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+if [ -f /usr/share/autojump/autojump.zsh ]; then
+  source /usr/share/autojump/autojump.zsh
+fi
 
 # alias
 alias vim=nvim
