@@ -23,7 +23,6 @@ Plug 'lfilho/cosco.vim'
 " vimtex
 " Plug 'lervag/vimtex'
 " Plug 'fedorenchik/gtags.vim'
-" Plug 'github/copilot.vim'
 Plug 'pechorin/any-jump.vim'
 call plug#end()
 
