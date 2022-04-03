@@ -37,6 +37,17 @@ if [ -f /usr/share/autojump/autojump.zsh ]; then
   source /usr/share/autojump/autojump.zsh
 fi
 
+# enable-ssh-support
+if [[ $(gpgconf --list-options gpg-agent | awk -F: '$1=="enable-ssh-support" {print $10}') = 1 ]]; then
+  unset SSH_AGENT_PID
+  if [[ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]]; then
+    export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+    gpgconf --launch gpg-agent
+  fi
+  export GPG_TTY=$(tty)
+  gpg-connect-agent updatestartuptty /bye &>/dev/null
+fi
+
 # alias
 alias vim=nvim
 alias suod=sudo
