@@ -9,7 +9,7 @@
 	excludesfile = ~/.gitignore
 	mergeoptions = --no-edit
 [alias]
-	commitutc = !git commit --date=\"$(date -u +%Y-%m-%dT%H:%M:%S%z)\"
+	commitutc = !git commit -s --date=\"$(date -u +%Y-%m-%dT%H:%M:%S%z)\"
 [push]
 	followTags = true
 	default = current
