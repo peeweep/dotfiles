@@ -61,6 +61,11 @@ alias ll='ls -lh'
 alias gomodvendor="go mod verify && go mod tidy && go mod vendor"
 alias history="history 1"
 
+# npm
+NPM_PACKAGES="${HOME}/.npm-packages"
+export PATH="$PATH:$NPM_PACKAGES/bin"
+export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
+
 # case insensitive on
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 
