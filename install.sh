@@ -63,8 +63,7 @@ pacman_unofficial_packages() {
   # install unofficial packages
   sudo pacman --sync --noconfirm --needed fcitx5-git fcitx5-gtk-git \
     fcitx5-material-color fcitx5-pinyin-moegirl-rime fcitx5-qt5-git \
-    fcitx5-rime-git firefox-nightly-en-us nerd-fonts-complete supersm-git \
-    visual-studio-code-bin unzip-iconv
+    fcitx5-rime-git firefox-nightly-en-us nerd-fonts-complete supersm-git
 
   # install gpu driver
   gpu_model=$(lspci -mm | awk -F '\"|\" \"|\\(' '/"Display|"3D|"VGA/')
@@ -179,7 +178,7 @@ gnome)
   sudo systemctl enable sddm
   ;;
 *)
-  sudo pacman --sync --noconfirm --needed i3-gaps i3status-rust numlockx feh rofi xorg-xrdb sddm
+  sudo pacman --sync --noconfirm --needed i3-gaps i3status numlockx feh rofi xorg-xrdb sddm
   sudo systemctl enable sddm
   supersm i3
   ;;
