@@ -11,7 +11,7 @@
 [alias]
 	commitutc = !git commit -s --date=\"$(date -u +%Y-%m-%dT%H:%M:%S%z)\"
 [push]
-	followTags = true
+	followTags = false
 	default = current
 [pull]
 	ff = only
