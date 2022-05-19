@@ -21,9 +21,6 @@ setopt hist_fcntl_lock 2>/dev/null
 setopt hist_reduce_blanks
 setopt inc_append_history
 
-# directory
-export PS1="[%~]$ "
-
 # kitty tab
 precmd () {print -Pn "\e]0;%~\a"}
 
@@ -38,7 +35,7 @@ if [ -f /usr/share/autojump/autojump.zsh ]; then
 fi
 
 # enable-ssh-support
-if [[ $(gpgconf --list-options gpg-agent | awk -F: '$1=="enable-ssh-support" {print $10}') = 1 ]]; then
+if [[ $(gpgconf --list-options gpg-agent 2>/dev/null | awk -F: '$1=="enable-ssh-support" {print $10}') = 1 ]]; then
   unset SSH_AGENT_PID
   if [[ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]]; then
     export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
@@ -55,7 +52,10 @@ alias sduo=sudo
 alias farsee="curl -F \"c=@-\" \"https://fars.ee/\""
 alias setgitproxy="git config --global http.proxy 'socks5://127.0.0.1:7891';git config --global https.proxy 'socks5://127.0.0.1:7891'"
 alias unsetgitproxy="git config --global --unset http.proxy;git config --global --unset https.proxy"
-alias setworkmail="git config user.name zhangjinqiang; git config user.email zhangjinqiang@uniontech.com"
+alias setworkmail="git config user.name 'jinqiang zhang'; git config user.email jinqiang@fydeos.io"
+alias setglobalworkmail="git config --global user.name 'jinqiang zhang'; git config --global user.email jinqiang@fydeos.io"
+alias setglobaldevmail="git config --global user.name peeweep; git config --global user.email peeweep@0x0.ee"
+alias setdevmail="git config user.name peeweep; git config user.email peeweep@0x0.ee"
 alias grep='grep --color=auto'
 alias ll='ls -lh'
 alias gomodvendor="go mod verify && go mod tidy && go mod vendor"
@@ -72,14 +72,25 @@ zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 # select menu
 zstyle ':completion:*' menu yes select
 
+# rehash
+zstyle ':completion:*' rehash true
+
+# cache for completion
+zstyle ':completion::complete:*' use-cache 1
+
 # up/down line search
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
+
 bindkey -e
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
 
 # compinit
 autoload -Uz compinit
@@ -88,10 +99,31 @@ for dump in ~/.zcompdump(N.mh+24); do
 done
 compinit -C
 
+# gentoo-zsh-completions
+if [ -f /usr/share/zsh/site-functions/_portage ]; then
+  autoload -U compinit promptinit
+  compinit
+  promptinit; prompt gentoo
+fi
+
+# directory
+export PS1='%n@%m %~ %# '
+if [[ x$(hostname) == x"gentoo" ]]; then
+  export PS1='%B%F{green}%n@%m %B%F{blue}%~ %# %b%f%k'
+fi
+
 # macos
 if [ -f /opt/homebrew/bin/brew ]; then
   alias brew='arch -arm64 /opt/homebrew/bin/brew'
 fi
 if [ -d /opt/homebrew/opt/openjdk/bin ]; then
   export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+fi
+if [ -f ~/.githubtoken ]; then
+  source ~/.githubtoken
+fi
+# use openfyde depot_tools
+if [ -d /home/peeweep/fyde/depot_tools ]; then
+  export PATH="/home/peeweep/fyde/depot_tools:$PATH"
+  export DEPOT_TOOLS_UPDATE=0
 fi
