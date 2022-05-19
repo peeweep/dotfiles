@@ -190,13 +190,14 @@ bar {
 focus_follows_mouse no
 # hide window title
 new_window pixel 0
-# gaps inner 10
-# gaps outer 5
+gaps inner 10
+gaps outer 5
 
 
 # bindsym
 # exec applications
 bindsym $mod+Return exec GLFW_IM_MODULE=ibus kitty
+# bindsym $mod+Return exec st -z 22
 bindsym $mod+Shift+f exec rofi -show run
 bindsym $mod+Shift+z exec flameshot gui
 bindsym $mod+Shift+a exec flameshot full -c
