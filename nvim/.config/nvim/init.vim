@@ -24,6 +24,8 @@ Plug 'lfilho/cosco.vim'
 " Plug 'lervag/vimtex'
 " Plug 'fedorenchik/gtags.vim'
 Plug 'pechorin/any-jump.vim'
+" blame
+Plug 'APZelos/blamer.nvim'
 call plug#end()
 
 " nerdtree
@@ -149,3 +151,9 @@ noremap <leader>2 2gt
 noremap <leader>3 3gt
 noremap <leader>4 4gt
 noremap <leader>0 :tablast<cr>
+
+" blamer
+let g:blamer_delay = 10
+let g:blamer_prefix = ' > '
+highlight Blamer guifg=lightgrey
+nnoremap <leader>bt :BlamerToggle<CR>
