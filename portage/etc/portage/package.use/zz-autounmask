@@ -1,0 +1,28 @@
+# remmina
+net-misc/remmina vnc
+dev-libs/libdbusmenu gtk3
+app-crypt/gcr gtk
+# pinentry
+app-crypt/pinentry -ncurses
+x11-base/xorg-server xvfb
+# kitty
+x11-terms/kitty transfer
+# nvidia
+x11-drivers/nvidia-drivers dist-kernel -tools
+# rust-analyzer
+dev-lang/rust rust-src
+# networkmanager
+net-misc/networkmanager -wext -ppp
+# wemeet
+net-im/wemeet bundled-libs
+# google-chrome
+app-text/xmlto text
+app-text/ghostscript-gpl cups
+# pfl
+app-portage/pfl -network-cron
+# noto
+media-fonts/noto cjk
+# telegram-desktop
+dev-qt/qtgui dbus jpeg
+media-video/ffmpeg opus
+sys-libs/zlib minizip
