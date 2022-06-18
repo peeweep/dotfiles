@@ -23,12 +23,14 @@ set $menu rofi -show run | xargs swaymsg exec --
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+
 #
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
+output DP-1 scale 2
 
 ### Idle configuration
 #
@@ -62,7 +64,7 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+Return exec GLFW_IM_MODULE=ibus kitty
+    bindsym $mod+Return exec kitty
 
     # Kill focused window
     bindsym $mod+Shift+q kill
@@ -221,5 +223,4 @@ default_border none
 gaps inner 10
 gaps outer 5
 focus_follows_mouse no
-output DP-1 scale 1.5
 exec --no-startup-id fcitx5 -d
