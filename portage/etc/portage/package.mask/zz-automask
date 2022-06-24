@@ -1,2 +1,3 @@
 virtual/dist-kernel::gentoo
 dev-util/rust-analyzer::gentoo-zh
+>www-client/firefox-101.0.1
