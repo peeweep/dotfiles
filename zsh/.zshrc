@@ -35,13 +35,13 @@ if [ -f /usr/share/autojump/autojump.zsh ]; then
 fi
 
 # enable-ssh-support
+export GPG_TTY=$(tty)
 if [[ $(gpgconf --list-options gpg-agent 2>/dev/null | awk -F: '$1=="enable-ssh-support" {print $10}') = 1 ]]; then
   unset SSH_AGENT_PID
   if [[ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]]; then
     export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
     gpgconf --launch gpg-agent
   fi
-  export GPG_TTY=$(tty)
   gpg-connect-agent updatestartuptty /bye &>/dev/null
 fi
 
