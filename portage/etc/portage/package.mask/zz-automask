@@ -1,3 +1,14 @@
+# begin xanmod-kernel::gentoo-zh
 virtual/dist-kernel::gentoo
+sys-kernel/gentoo-kernel::gentoo
+sys-kernel/gentoo-kernel-bin::gentoo
+sys-kernel/vanilla-kernel::gentoo
+=sys-kernel/genkernel-4.2.6-r4
+# end xanmod-kernel::gentoo-zh
+
+# gentoo-zh
+mail-client/thunderbird::gentoo-zh
 dev-util/rust-analyzer::gentoo-zh
->www-client/firefox-101.0.1
+
+# virtualbox broken my vms, this is the lastest version work fine.
+>app-emulation/virtualbox-6.1.34-r1
