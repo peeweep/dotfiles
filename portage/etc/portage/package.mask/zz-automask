@@ -9,6 +9,3 @@ sys-kernel/vanilla-kernel::gentoo
 # gentoo-zh
 mail-client/thunderbird::gentoo-zh
 dev-util/rust-analyzer::gentoo-zh
-
-# virtualbox broken my vms, this is the lastest version work fine.
->app-emulation/virtualbox-6.1.34-r1
