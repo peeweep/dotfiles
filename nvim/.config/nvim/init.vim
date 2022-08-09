@@ -152,6 +152,9 @@ noremap <leader>3 3gt
 noremap <leader>4 4gt
 noremap <leader>0 :tablast<cr>
 
+" make table key work on coc.nvim completion
+inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#next(1) : CheckBackspace() ? "\<Tab>" : coc#refresh()
+
 " blamer
 let g:blamer_delay = 10
 let g:blamer_prefix = ' > '

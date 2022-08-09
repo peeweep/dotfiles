@@ -4,6 +4,7 @@
   "javascript.format.enabled": true,
   "coc.preferences.formatOnSaveFiletypes": ["python", "js", "json", "go"],
   "coc.preferences.extensionUpdateCheck": "daily",
+  "suggest.noselect": true,
   "languageserver": {
     "latex": {
       "command": "/usr/bin/texlab",
