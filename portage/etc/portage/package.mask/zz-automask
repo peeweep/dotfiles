@@ -9,3 +9,4 @@ sys-kernel/vanilla-kernel::gentoo
 # gentoo-zh
 mail-client/thunderbird::gentoo-zh
 dev-util/rust-analyzer::gentoo-zh
+>net-im/wemeet-3.8.0.2-r1
