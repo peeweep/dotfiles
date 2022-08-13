@@ -54,8 +54,10 @@ alias setgitproxy="git config --global http.proxy 'socks5://127.0.0.1:7891';git 
 alias unsetgitproxy="git config --global --unset http.proxy;git config --global --unset https.proxy"
 alias setworkmail="git config user.name 'jinqiang zhang'; git config user.email jinqiang@fydeos.io"
 alias setglobalworkmail="git config --global user.name 'jinqiang zhang'; git config --global user.email jinqiang@fydeos.io"
-alias setglobaldevmail="git config --global user.name peeweep; git config --global user.email peeweep@0x0.ee"
 alias setdevmail="git config user.name peeweep; git config user.email peeweep@0x0.ee"
+alias setglobaldevmail="git config --global user.name peeweep; git config --global user.email peeweep@0x0.ee"
+alias setgentoomail="git config user.name 'Jinqiang Zhang'; git config user.email peeweep@0x0.ee"
+alias setglobalgentoomail="git config --global user.name 'Jinqiang Zhang'; git config --global user.email peeweep@0x0.ee"
 alias grep='grep --color=auto'
 alias ll='ls -lh'
 alias gomodvendor="go mod verify && go mod tidy && go mod vendor"
