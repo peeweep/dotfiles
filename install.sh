@@ -15,8 +15,7 @@ pacman_peeweep() {
   {
     echo "[peeweep]"
     echo "SigLevel = Never"
-    echo "Server = https://repo.peeweep.de/archlinux/x86_64"
-    echo "Server = https://peeweep.duckdns.org/archlinux/x86_64"
+    echo "Server = https://repo.daydream.ac.cn/archlinux/x86_64"
   } | sudo tee -a /etc/pacman.conf
   sudo pacman -Syu --noconfirm --needed curl
   curl https://daydream.ac.cn/pubring.gpg | sudo pacman-key -a -
@@ -38,7 +37,7 @@ pacman_ck() {
 }
 
 linux_ck() {
-  sudo pacman -Syu --noconfirm --needed $(/lib/ld-linux-x86-64.so.2 --help | grep supported | awk '{print $1}' | sort -n | tail -1 | sed 's|x86-64|ck-generic|')
+  sudo pacman -Syu --noconfirm --needed $(/lib/ld-linux-x86-64.so.2 --help | grep supported | awk '{print $1}' | sort -n | tail -1 | sed 's|x86_64|ck-generic|')
 }
 
 pacman_unofficial_packages() {
@@ -174,12 +173,12 @@ kitty_scheme
 
 case $1 in
 gnome)
-  sudo pacman --sync --noconfirm --needed gnome evolution gnome-tweaks sddm
-  sudo systemctl enable sddm
+  sudo pacman --sync --noconfirm --needed gnome evolution gnome-tweaks lightdm
+  sudo systemctl enable lightdm
   ;;
 *)
-  sudo pacman --sync --noconfirm --needed i3-gaps i3status numlockx feh rofi xorg-xrdb sddm
-  sudo systemctl enable sddm
+  sudo pacman --sync --noconfirm --needed i3-gaps i3status numlockx feh rofi xorg-xrdb lightdm
+  sudo systemctl enable lightdm
   supersm i3
   ;;
 esac
