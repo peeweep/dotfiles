@@ -3,17 +3,13 @@
 ################################################################################
 
 # With:       reflector --verbose --country CHINA -l 200 -p https --sort rate --save /etc/pacman.d/mirrorlist
-# When:       2020-10-14 02:07:24 UTC
-# From:       https://www.archlinux.org/mirrors/status/json/
-# Retrieved:  2020-10-14 02:07:23 UTC
-# Last Check: 2020-10-14 00:51:16 UTC
+# When:       2022-08-28 12:56:36 UTC
+# From:       https://archlinux.org/mirrors/status/json/
+# Retrieved:  2022-08-28 12:56:33 UTC
+# Last Check: 2022-08-28 12:46:17 UTC
 
-Server = https://mirrors.sjtug.sjtu.edu.cn/archlinux/$repo/os/$arch
-Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
 Server = https://mirrors.bfsu.edu.cn/archlinux/$repo/os/$arch
-Server = https://mirrors.neusoft.edu.cn/archlinux/$repo/os/$arch
-Server = https://mirrors.dgut.edu.cn/archlinux/$repo/os/$arch
-Server = https://mirrors.nju.edu.cn/archlinux/$repo/os/$arch
-Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
-Server = https://mirrors.cqu.edu.cn/archlinux/$repo/os/$arch
-Server = https://mirror.pkgbuild.com/$repo/os/$arch
+Server = https://mirrors.aliyun.com/archlinux/$repo/os/$arch
+Server = https://mirrors.xjtu.edu.cn/archlinux/$repo/os/$arch
+Server = https://mirrors.sjtug.sjtu.edu.cn/archlinux/$repo/os/$arch
+Server = https://mirrors.shanghaitech.edu.cn/archlinux/$repo/os/$arch

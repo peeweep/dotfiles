@@ -177,7 +177,7 @@ gnome)
   sudo systemctl enable lightdm
   ;;
 *)
-  sudo pacman --sync --noconfirm --needed i3-gaps i3status numlockx feh rofi xorg-xrdb lightdm
+  sudo pacman --sync --noconfirm --needed i3-gaps i3status numlockx feh rofi xorg-xrdb lightdm lightdm-gtk-greeter xorg-server
   sudo systemctl enable lightdm
   supersm i3
   ;;
