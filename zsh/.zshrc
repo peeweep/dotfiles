@@ -21,6 +21,9 @@ setopt hist_fcntl_lock 2>/dev/null
 setopt hist_reduce_blanks
 setopt inc_append_history
 
+# let wildcard working https://unix.stackexchange.com/questions/589508
+setopt no_nomatch
+
 # kitty tab
 precmd () {print -Pn "\e]0;%~\a"}
 
