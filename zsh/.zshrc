@@ -128,7 +128,7 @@ if [ -f ~/.githubtoken ]; then
   source ~/.githubtoken
 fi
 # use openfyde depot_tools
-openfyde_depot_tools="/home/jinqiang/workspace-fydeos/depot_tools"
+openfyde_depot_tools="/home/peeweep/workspace-fydeos/depot_tools"
 if [ -d ${openfyde_depot_tools}  ]; then
   export PATH="${openfyde_depot_tools}:$PATH"
   export DEPOT_TOOLS_UPDATE=0
