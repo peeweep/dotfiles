@@ -190,8 +190,8 @@ bar {
 focus_follows_mouse no
 # hide window title
 new_window pixel 0
-gaps inner 10
-gaps outer 5
+# gaps inner 10
+# gaps outer 5
 
 
 # bindsym
@@ -213,6 +213,8 @@ bindsym $mod+Ctrl+Shift+Right workspace next
 bindsym $mod+Ctrl+Shift+Left workspace prev
 
 exec --no-startup-id fcitx5 -d
+# set extension display as primary
+# exec --no-startup-id xrandr --output HDMI-A-0 --primary --left-of eDP
 
 exec_always --no-startup-id feh --bg-scale ~/Pictures/bg.jpg
 exec_always --no-startup-id numlockx on
