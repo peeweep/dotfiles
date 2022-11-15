@@ -27,9 +27,6 @@ setopt no_nomatch
 # kitty tab
 precmd () {print -Pn "\e]0;%~\a"}
 
-# repo
-export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo'
-
 # load plugins
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
@@ -55,12 +52,6 @@ alias sduo=sudo
 alias farsee="curl -F \"c=@-\" \"https://fars.ee/\""
 alias setgitproxy="git config --global http.proxy 'socks5://127.0.0.1:7891';git config --global https.proxy 'socks5://127.0.0.1:7891'"
 alias unsetgitproxy="git config --global --unset http.proxy;git config --global --unset https.proxy"
-alias setworkmail="git config user.name 'jinqiang zhang'; git config user.email jinqiang@fydeos.io"
-alias setglobalworkmail="git config --global user.name 'jinqiang zhang'; git config --global user.email jinqiang@fydeos.io"
-alias setdevmail="git config user.name peeweep; git config user.email peeweep@0x0.ee"
-alias setglobaldevmail="git config --global user.name peeweep; git config --global user.email peeweep@0x0.ee"
-alias setgentoomail="git config user.name 'Jinqiang Zhang'; git config user.email peeweep@0x0.ee"
-alias setglobalgentoomail="git config --global user.name 'Jinqiang Zhang'; git config --global user.email peeweep@0x0.ee"
 alias grep='grep --color=auto'
 alias ll='ls -lh'
 alias gomodvendor="go mod verify && go mod tidy && go mod vendor"
@@ -126,10 +117,4 @@ if [ -d /opt/homebrew/opt/openjdk/bin ]; then
 fi
 if [ -f ~/.githubtoken ]; then
   source ~/.githubtoken
-fi
-# use openfyde depot_tools
-openfyde_depot_tools="/home/peeweep/workspace-fydeos/depot_tools"
-if [ -d ${openfyde_depot_tools}  ]; then
-  export PATH="${openfyde_depot_tools}:$PATH"
-  export DEPOT_TOOLS_UPDATE=0
 fi
