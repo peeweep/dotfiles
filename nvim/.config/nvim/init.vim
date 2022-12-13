@@ -152,6 +152,15 @@ noremap <leader>3 3gt
 noremap <leader>4 4gt
 noremap <leader>0 :tablast<cr>
 
+" coc extensions
+let g:coc_global_extensions = [
+      \ 'coc-json',
+      \ 'coc-pairs',
+      \ 'coc-prettier',
+      \ 'coc-tsserver',
+      \ 'coc-perl',
+\ ]
+
 " make table key work on coc.nvim completion
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1):
