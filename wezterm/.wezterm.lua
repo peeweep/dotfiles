@@ -1,5 +1,12 @@
 local wezterm = require 'wezterm';
 
+local default_prog = {}
+if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
+    default_prog = {"wsl","~"}
+else
+    default_prog = {"/usr/bin/zsh"}
+end
+
 return {
     -- ime
     use_ime = true,
@@ -18,7 +25,7 @@ return {
     color_scheme = "Dracula",
 
     -- zsh and bindkey
-    default_prog = {"/usr/bin/zsh"},
+    default_prog = default_prog,
     exit_behavior = "Close",
     keys = {
         {
