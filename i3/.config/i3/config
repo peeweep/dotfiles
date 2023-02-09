@@ -193,6 +193,8 @@ new_window pixel 0
 # gaps inner 10
 # gaps outer 5
 
+for_window [class="Steam"] floating enable
+for_window [class="Steam" title="^Steam$"] floating disabl
 
 # bindsym
 # exec applications
