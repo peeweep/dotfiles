@@ -193,13 +193,10 @@ new_window pixel 0
 # gaps inner 10
 # gaps outer 5
 
-for_window [class="Steam"] floating enable
-for_window [class="Steam" title="^Steam$"] floating disabl
-
 # bindsym
 # exec applications
 bindsym $mod+Return exec GLFW_IM_MODULE=ibus kitty
-# bindsym $mod+Return exec st -z 22
+# bindsym $mod+Return exec st -z 25
 bindsym $mod+Shift+f exec rofi -show run
 bindsym $mod+Shift+z exec flameshot gui
 bindsym $mod+Shift+a exec flameshot full -c
@@ -219,6 +216,7 @@ bindsym $mod+Ctrl+Shift+Left workspace prev
 
 exec --no-startup-id fcitx5 -d
 exec --no-startup-id bash ~/.config/i3/disable-eDP.sh
+exec --no-startup-id volumeicon
 
 exec_always --no-startup-id feh --bg-scale ~/Pictures/bg.jpg
 exec_always --no-startup-id numlockx on
