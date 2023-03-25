@@ -1,0 +1,37 @@
+From d5e1d58ae0ad4b9911a2c5dd05a7d14d2c942242 Mon Sep 17 00:00:00 2001
+From: Michael Stapelberg <michael@stapelberg.de>
+Date: Sun, 4 Sep 2022 12:42:35 +0200
+Subject: [PATCH] ethernet: print faster speeds in Gbit/s
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+As a special case, for 2500 Mbit/s, we display “2.5 Gbit/s”.
+
+For other speeds over 1000 Mbit/s, we print “10 Gbit/s”,
+“25 Gbit/s” or “100 Gbit/s”.
+---
+ src/print_eth_info.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/src/print_eth_info.c b/src/print_eth_info.c
+index 82a96db..9e2e22f 100644
+--- a/src/print_eth_info.c
++++ b/src/print_eth_info.c
+@@ -46,6 +46,13 @@ static int print_eth_speed(char *outwalk, const char *interface) {
+     (void)strcpy(ifr.ifr_name, interface);
+     if (ioctl(general_socket, SIOCETHTOOL, &ifr) == 0) {
+         ethspeed = (ecmd.speed == USHRT_MAX ? 0 : ethtool_cmd_speed(&ecmd));
++        if (ethspeed == 2500) {
++            // 2.5 Gbit/s is the only case where floating point formatting is most
++            // common.
++            return sprintf(outwalk, "%.1f Gbit/s", (double)ethspeed / 1000);
++        } else if (ethspeed > 1000) {
++            return sprintf(outwalk, "%d Gbit/s", ethspeed / 1000);
++        }
+         return sprintf(outwalk, "%d Mbit/s", ethspeed);
+     } else
+         return sprintf(outwalk, "?");
+-- 
+2.40.0
+
