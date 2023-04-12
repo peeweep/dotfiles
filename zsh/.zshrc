@@ -104,7 +104,7 @@ fi
 
 # directory
 export PS1='%n@%m %~ %# '
-if [[ x$(hostname) == x"gentoo" ]]; then
+if [ -d /var/db/repos ]; then
   export PS1='%B%F{green}%n@%m %B%F{blue}%~ %# %b%f%k'
 fi
 
