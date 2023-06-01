@@ -180,6 +180,7 @@ bar {
         # status_command i3status-rs ~/.config/i3/status.toml
         status_command i3status -c ~/.config/i3/i3status
         # tray_output none
+        # tray_output HDMI-A-0
         tray_output primary
         colors {
                 background #424242
@@ -218,6 +219,9 @@ bindsym $mod+Ctrl+Shift+Left workspace prev
 exec --no-startup-id fcitx5 -d
 # exec --no-startup-id bash ~/.config/i3/xrandr.sh
 exec --no-startup-id volumeicon
+
+# workspace 1 output HDMI-A-0
+# workspace 10 output DisplayPort-2
 
 exec_always --no-startup-id feh --bg-scale ~/Pictures/bg.jpg
 exec_always --no-startup-id numlockx on

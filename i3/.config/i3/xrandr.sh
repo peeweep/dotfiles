@@ -33,6 +33,8 @@ HDMI_DP() {
     # hdmi primary
     xrandr --output "${HDMI_monitor}" --primary
   fi
+
+  i3 restart
 }
 
 HDMI_DP
