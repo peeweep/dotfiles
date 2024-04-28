@@ -56,6 +56,7 @@ alias grep='grep --color=auto'
 alias ll='ls -lh'
 alias gomodvendor="go mod verify && go mod tidy && go mod vendor"
 alias history="history 1"
+alias setsshagent="eval $(ssh-agent) ssh-add ~/.ssh/id_rsa"
 
 # npm
 NPM_PACKAGES="${HOME}/.npm-packages"
@@ -115,6 +116,18 @@ fi
 if [ -d /opt/homebrew/opt/openjdk/bin ]; then
   export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 fi
+
+# github
 if [ -f ~/.githubtoken ]; then
   source ~/.githubtoken
+fi
+
+# go bin
+if [ -d ~/go/bin ]; then
+  export PATH="/home/peeweep/go/bin:$PATH"
+fi
+
+# atuin
+if [ -f /usr/bin/atuin ]; then
+  eval "$(atuin init zsh)"
 fi
