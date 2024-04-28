@@ -12,8 +12,8 @@ export TERM=xterm-256color
 stty sane
 
 HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=100000
+SAVEHIST=$HISTSIZE
 HISTTIMEFORMAT=
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
@@ -130,4 +130,9 @@ fi
 # atuin
 if [ -f /usr/bin/atuin ]; then
   eval "$(atuin init zsh)"
+fi
+
+# fzf
+if [ -f /usr/bin/fzf ]; then
+  eval "$(fzf --zsh)"
 fi
