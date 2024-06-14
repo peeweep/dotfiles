@@ -49,7 +49,10 @@ fi
 alias vim=nvim
 alias suod=sudo
 alias sduo=sudo
-alias farsee="curl -F \"c=@-\" \"https://fars.ee/\""
+alias farsee='curl -F "c=@-" "https://fars.ee/"'
+if [ -f ~/.zsh/pb.sh ]; then
+  source ~/.zsh/pb.sh
+fi
 alias setgitproxy="git config --global http.proxy 'socks5://127.0.0.1:7891';git config --global https.proxy 'socks5://127.0.0.1:7891'"
 alias unsetgitproxy="git config --global --unset http.proxy;git config --global --unset https.proxy"
 alias grep='grep --color=auto'
