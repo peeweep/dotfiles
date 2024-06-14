@@ -127,6 +127,12 @@ if [ -d ~/go/bin ]; then
   export PATH="/home/peeweep/go/bin:$PATH"
 fi
 
+# cargo bin
+if [ -d ~/.cargo/bin ]; then
+  export PATH="/home/peeweep/.cargo/bin:$PATH"
+fi
+
+
 # atuin
 if [ -f /usr/bin/atuin ]; then
   eval "$(atuin init zsh)"
