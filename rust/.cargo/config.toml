@@ -1,6 +1,6 @@
 [source.crates-io]
 registry = "https://github.com/rust-lang/crates.io-index"
-replace-with = 'bfsu'
+replace-with = 'rsproxy-sparse'
 
 [source.bfsu]
 registry = "https://mirrors.bfsu.edu.cn/git/crates.io-index.git"
@@ -16,3 +16,10 @@ registry = "git://crates.rustcc.cn/crates.io-index"
 
 [source.ustc]
 registry = "git://mirrors.ustc.edu.cn/crates.io-index"
+
+[source.rsproxy]
+registry = "https://rsproxy.cn/crates.io-index"
+[source.rsproxy-sparse]
+registry = "sparse+https://rsproxy.cn/index/"
+[registries.rsproxy]
+index = "https://rsproxy.cn/crates.io-index"
