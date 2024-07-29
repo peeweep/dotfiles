@@ -1,8 +1,9 @@
 {
   "registry-mirrors": [
-    "https://docker.libcuda.so",
-    "https://docker.ketches.cn",
+    "https://docker.cdngslb.xyz",
     "https://docker.e-whisper.com",
+    "https://docker.ketches.cn",
+    "https://docker.libcuda.so",
     "https://docker.mrxn.net"
   ]
 }
