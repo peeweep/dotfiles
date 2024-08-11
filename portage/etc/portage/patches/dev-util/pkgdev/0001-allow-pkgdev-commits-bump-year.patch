@@ -1,0 +1,28 @@
+From 296314cfb09c826f3c292fe8442811350e3f88bd Mon Sep 17 00:00:00 2001
+From: jinqiang zhang <peeweep@0x0.ee>
+Date: Sun, 11 Aug 2024 22:51:40 +0000
+Subject: [PATCH] allow pkgdev commits bump year
+
+on gentoo-zh and peeweep overlay
+
+Signed-off-by: jinqiang zhang <peeweep@0x0.ee>
+---
+ src/pkgdev/scripts/pkgdev_commit.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/pkgdev/scripts/pkgdev_commit.py b/src/pkgdev/scripts/pkgdev_commit.py
+index dc4d46f..e457282 100644
+--- a/src/pkgdev/scripts/pkgdev_commit.py
++++ b/src/pkgdev/scripts/pkgdev_commit.py
+@@ -830,7 +830,7 @@ def determine_msg_args(options, changes):
+ @commit.bind_final_check
+ def _commit_validate(parser, namespace):
+     # flag for testing if running under the gentoo repo
+-    namespace.gentoo_repo = namespace.repo.repo_id == "gentoo"
++    namespace.gentoo_repo = namespace.repo.repo_id in {"gentoo", "gentoo-zh", "peeweep"}
+ 
+     # mangle files in the gentoo repo by default
+     if namespace.mangle is None and namespace.gentoo_repo:
+-- 
+2.45.2
+
