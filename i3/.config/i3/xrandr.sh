@@ -8,19 +8,19 @@ adjust_monitors() {
   if [[ $(echo "${all_monitors}" | wc -l) -ne 2 ]]; then
     return
   fi
-  left_monitor=$(echo "${all_monitors}" | grep HDMI)
-  right_monitor=$(echo "${all_monitors}" | grep DP)
+  left_monitor=$(xrandr --query | grep ' connected' | grep 2160 | awk '{print $1}')
+  right_monitor=$(xrandr --query | grep ' connected' | grep 1080 | awk '{print $1}')
   if [[ "${left_monitor}" != "" && "${right_monitor}" != "" ]]; then
     # init dp
     xrandr --output "${right_monitor}" --auto
     # init hdmi
     xrandr --output "${left_monitor}" --auto
     # hdmi left of dp
-    xrandr --output "${right_monitor}" --left-of "${left_monitor}"
+    xrandr --output "${left_monitor}" --left-of "${right_monitor}"
     # hdmi rotate left
-    xrandr --output "${left_monitor}" --rotate left
+    xrandr --output "${right_monitor}" --rotate left
     # dp primary
-    xrandr --output "${right_monitor}" --primary
+    xrandr --output "${left_monitor}" --primary
   fi
 
   i3 restart
