@@ -1,40 +1,29 @@
 #!/bin/bash
 
-# HDMI primary dispaly on the left
-# DP secondary dispaly on the right and rotate left
-HDMI_DP() {
-  local monitors=$(xrandr --query | grep ' connected' | awk '{print $1}')
+# primary dispaly on the left
+# secondary dispaly on the right and rotate left
+adjust_monitors() {
+  all_monitors=$(xrandr --query | grep ' connected' | awk '{print $1}')
   # must have 2 monitors
-  if [[ $(echo "${monitors}" | wc -l) -ne 2 ]]; then
+  if [[ $(echo "${all_monitors}" | wc -l) -ne 2 ]]; then
     return
   fi
-  for monitor in ${monitors}; do
-    # DP output name
-    local CHECK_HDMI=$(echo "${monitor}" | grep HDMI)
-    if [[ x"${CHECK_HDMI}" != x"" ]]; then
-      local HDMI_monitor="${CHECK_HDMI}"
-    fi
-    # HDMI output name
-    local CHECK_DP=$(echo "${monitor}" | grep DisplayPort)
-    if [[ "${CHECK_DP}" != "" ]]; then
-      local DP_monitor="${CHECK_DP}"
-    fi
-  done
-
-  if [[ "${HDMI_monitor}" != "" && "${DP_monitor}" != "" ]]; then
+  left_monitor=$(echo "${all_monitors}" | grep HDMI)
+  right_monitor=$(echo "${all_monitors}" | grep DP)
+  if [[ "${left_monitor}" != "" && "${right_monitor}" != "" ]]; then
     # init dp
-    xrandr --output "${DP_monitor}" --auto
+    xrandr --output "${right_monitor}" --auto
     # init hdmi
-    xrandr --output "${HDMI_monitor}" --auto
+    xrandr --output "${left_monitor}" --auto
     # hdmi left of dp
-    xrandr --output "${HDMI_monitor}" --left-of "${DP_monitor}"
-    # dp rotate left
-    xrandr --output "${DP_monitor}" --rotate left
-    # hdmi primary
-    xrandr --output "${HDMI_monitor}" --primary
+    xrandr --output "${right_monitor}" --left-of "${left_monitor}"
+    # hdmi rotate left
+    xrandr --output "${left_monitor}" --rotate left
+    # dp primary
+    xrandr --output "${right_monitor}" --primary
   fi
 
   i3 restart
 }
 
-HDMI_DP
+adjust_monitors

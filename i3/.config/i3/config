@@ -220,8 +220,8 @@ exec --no-startup-id fcitx5 -d
 # exec --no-startup-id bash ~/.config/i3/xrandr.sh
 exec --no-startup-id volumeicon
 
-# workspace 1 output HDMI-A-0
-# workspace 10 output DisplayPort-2
+# workspace 1 output DP-2
+# workspace 10 output HDMI-1
 
 exec_always --no-startup-id feh --bg-scale ~/Pictures/bg.jpg
 exec_always --no-startup-id numlockx on
