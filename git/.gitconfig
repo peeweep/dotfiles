@@ -1,7 +1,7 @@
 [user]
 	name = jinqiang zhang
-	email = peeweep@0x0.ee
-	signingkey = peeweep@0x0.ee
+	email = jinqiang@zhang.my
+	signingkey = jinqiang@zhang.my
 [credential]
 	helper = store
 [core]
